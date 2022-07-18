@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 기초</title>
+    <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
+    <style>
+        /* 리셋 */
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'GmarketSans';
+        }
+
+        /* 헤더 */
+        #header {
+            padding: 2vw;
+            border: 1px dashed #dedede;
+        }
+
+        #header h1 {
+            font-size: 4vw;
+            margin-bottom: 2vw;
+        }
+
+        #header nav ul li {
+            list-style: none;
+            display: inline;
+        }
+
+        #header nav ul li a {
+            text-decoration: none;
+            color: #000;
+            border: 1px solid #000;
+            padding: 0.7vw 1vw;
+            display: inline-block;
+        }
+
+        #header nav ul li a:hover {
+            background-color: #000;
+            color: #fff;
+            transition: all 0.3s;
+        }
+
+        /* 컨텐츠 */
+        #contents {
+            padding: 2vw;
+        }
+
+        #contents .menu {
+            border-bottom: 1px dashed #dedede;
+            padding: 0 0 2vw 0;
+        }
+
+        #contents .menu ul li {
+            list-style: none;
+            display: inline;
+        }
+
+        #contents .menu ul li a {
+            text-decoration: none;
+            color: #000;
+            border: 1px solid #000;
+            background-color: #000;
+            color: #fff;
+            padding: 0.7vw 1vw 0.7vw 1vw;
+            word-break: keep-all;
+            display: inline-block;
+            margin-bottom: 0.7vw;
+            margin-top: 0.7vw;
+        }
+
+        #contents .menu ul li a:hover {}
+
+        /* 아티클 */
+        .article {
+            padding: 2vw 0;
+            line-height: 1.6;
+        }
+
+        .article h2 {
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+
+        .article h3{
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+
+        .article p {
+            margin-bottom: 10px;
+        }
+
+        .article .table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            margin-bottom: 10px;
+        }
+
+        .article .table tr th {
+            border: 1px solid #dedede;
+            padding: 10px;
+            font-weight: normal;
+            background-color: #f5f5f5;
+        }
+
+        .article .table tr td {
+            border: 1px solid #dedede;
+            padding: 10px;
+            vertical-align: middle;
+        }
+
+        .article .table .center {
+            text-align: center;
+        }
+
+        .article .box {
+            background-color: #f5f5f5;
+            padding: 15px;
+        }
+
+        /* 미디어 쿼리 */
+        @media(max-width : 800px) {
+            #header {
+                padding: 16px;
+            }
+
+            #header h1 {
+                font-size: 40px;
+            }
+
+            #header nav ul li a {
+                padding: 5px 1px;
+                font-size: 18px;
+            }
+
+            #contents {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <h1>HTML</h1>
+        <nav>
+            <ul>
+                <li><a href="#">기초</a></li>
+                <li><a href="#">주제별</a></li>
+                <li><a href="#">알파벳</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="contents">
+        <nav class="menu">
+            <ul>
+                <li><a href="basic.html">기본 문서</a></li>
+                <li><a href="markup.html">기본 규칙</a></li>
+                <li><a href="#">W3C validator</a></li>
+                <li><a href="#">시멘틱 마크업</a></li>
+                <li><a href="#">블록 / 인라인 요소</a></li>
+            </ul>
+        </nav>
+        <article class="article">
+            <h2>마크업 기본 문법 규칙</h2>
+            <p>마크업을 할 때 기본적으로 알고 있어야 하는 문법들</p>
+
+            <h3>1. 요소는 시작태그와 종료태그가 있어야 한다.</h3>
+            <p class="box">&lt;p&gt;요소는 시작 태그와 종료 태그가 있어야 한다.&lt;/p&gt; (O)<br></p> 
+            <p class="box">&lt;p&gt;요소는 시작 태그와 종료 태그가 있어야 한다. (X) <br></p>
+            <p>
+                태그 중에는 종료 태그가 없는 요소들도 있습니다. 이런 요소를 빈 요소(empty element)라고 하는데,
+                자주 사용되는 빈 요소에는 &lt;br&gt;, &lt;hr&gt;, &lt;img&gt;, &lt;input&gt;, &lt;meta&gt;, &lt;link&gt; 등이 있습니다.
+            </p>
+
+            <h3>2. 요소는 제대로 중첩되어야 합니다.</h3>
+            <p class="box">&lt;p&gt;중첩된 요소가 있을 때는 <mark>&lt;strong&gt;</mark>바르게<mark>&lt;/strong&gt;</mark> 표현해야 한다.&lt;/p&gt; (O)<br></p> 
+            <p class="box">&lt;p&gt;중첩된 요소가 있을 때는 <mark>&lt;strong&gt;</mark>바르게<mark>&lt;/p&gt;</mark> 표현해야 한다.&lt;/strong&gt; (X) <br></p>
+            <p>
+                부모 자식 태그를 잘 구분하여 닫는 태그를 작성하자!
+            </p>
+
+            <h3>3. img 태그에는 alt 속성이 있어야 한다.</h3>
+            <p class="box">&lt;img src = "images/today.gif" <mark>alt = "오늘"</mark>&gt; (O)<br></p> 
+            <p class="box">&lt;img src = "images/today.gif"&gt; (X) <br></p>
+            <p>
+                이미지를 볼 수 없는 환경에서 이미지에 대한 정보를 제공해야 하기 때문에 alt속성을 사용하자!
+            </p>
+
+            <h3>4. 권장하는 사항도 있습니다.</h3>
+            <p class="box"><mark>&lt;p&gt;</mark>태그나 속성은 소문자로 마크업 하는것을 권장한다.<mark>&lt;/p&gt;</mark> <strong>권장</strong><br></p> 
+            <p class="box">&lt;P&gt;태그나 속성은 소문자로 마크업 하는것을 권장한다.&lt;/P&gt;<br></p> 
+            <p class="box"><mark>&lt;p title = "속성 값"&gt;</mark>속성의 값에는 따옴표 처리를 권장한다.&lt;/p&gt; <strong>권장</strong><br></p> 
+            <p class="box">&lt;p title = 속성 값&gt;속성의 값에는 따옴표 처리를 권장한다.&lt;/p&gt;</p> 
+            <p>
+                소문자로 통일해서 마크업하고, 속성에 대한 값은 따옴표 안에 표현한다.
+            </p>
+
+            <h3>5. 주석처리 방법.</h3>
+            <p class="box"><mark>&lt;!--</mark>  header  <mark>--></mark><br></p> 
+            <p class="box"><mark>&lt;!--</mark>  여기서부터 공지 사항 입니다. <mark>--></mark><br></p> 
+            <p>
+                주석은 협업시 다음작업자에게 작업한 내용을 쉽게 알아볼 수 있도록 도와주는 설명문이다.
+            </p>
+            
+        </article>
+    </section>
+</body>
+
+</html>
