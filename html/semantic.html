@@ -148,7 +148,7 @@
         <h1>HTML</h1>
         <nav>
             <ul>
-                <li><a href="#">기초</a></li>
+                <li><a href="basic.html">기초</a></li>
                 <li><a href="#">주제별</a></li>
                 <li><a href="#">알파벳</a></li>
             </ul>
@@ -159,7 +159,7 @@
             <ul>
                 <li><a href="basic.html">기본 문서</a></li>
                 <li><a href="markup.html">기본 규칙</a></li>
-                <li><a href="#">W3C validator</a></li>
+                <li><a href="valid.html">W3C validator</a></li>
                 <li><a href="semantic.html">시멘틱 마크업</a></li>
                 <li><a href="inlineblock.html">블록 / 인라인 요소</a></li>
             </ul>
@@ -169,9 +169,33 @@
             <small>
                 시멘틱 태그란 마크업 할 때 의미에 부합하는 태그를 사용하라는 뜻이다.
                 만약 이러한 태그없이 제목을 작성했다면 스크린 리더는 제목인지 구별못하고 낭독할 것이다.
+                이 경우에 시각장애인들은 불편함을 겪는다.
             </small>
+            <p class="box">
+                &lt;!DOCTYPE html&gt;<br>
+                &lt;html lang="ko"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;head&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title>시멘틱 마크업&lt;/title&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/head&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<mark>반응형 웹</mark><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;<br>
+                &lt;/html&gt;<br>
+            </p>
+            <p class="box">
+                &lt;!DOCTYPE html&gt;<br>
+                &lt;html lang="ko"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;head&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title>시멘틱 마크업&lt;/title&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/head&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<mark>&lt;h1&gt;반응형 웹&lt;/h1&gt;</mark><strong>&nbsp;&nbsp;권장!</strong><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;<br>
+                &lt;/html&gt;<br>
+            </p>
         </article>
     </section>
 </body>
-
 </html>
