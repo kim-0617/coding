@@ -115,6 +115,7 @@
         .article .box {
             background-color: #f5f5f5;
             padding: 15px;
+            margin-bottom: 25px;
         }
 
         /* 미디어 쿼리 */
@@ -158,6 +159,144 @@
         </nav>
         <article class="article">
             <h2>font-size, 단위의 고찰</h2>
+            <small>▶px : 해상도에 따라 달라지는 기본단위</small>
+            <p class="box">font-size : 12px;</p>
+            <small>▶% : 부모요소의 글자 크기를 100% 기준으로 계산한 % 단위</small>
+            <p class="box">font-size : 150%;</p>
+            <small>▶em : 부모 요소의 글자 크기를 100% 기준으로 계산한 100분의 1단위로서, 다음과 같이 표현합니다. <br> 특별한 설정이 없다면 16px이 1em이 되므로, 1.5em은 24px이 된다.</small>
+            <p class="box">font-size : 1.5em;</p>
+            <small>▶rem : em과 비슷하지만 부모요소가 아닌 최상위 요소의 크기를 100% 기준으로 계산합니다. 즉, html요소</small>
+            <p class="box">font-size : 1.5rem;</p>
+            <small>▶vw, vh : 부포트 너비값의 100분의 1단위, vh는 뷰포트 높이값의 100분의 1단위이며, 다음과 같이 표현합니다. <br>다음은 글자 크기가 뷰포트 너비의 10% 크기라는 의미입니다.</small>
+            <p class="box">font-size : 10vw;</p>
+
+            <p>글자 크기를 각 단위로 환산하면 다음과 같습니다.</p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>px</th>
+                        <th>%</th>
+                        <th>em</th>
+                        <th>pt</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="center">6 px</td>
+                        <td class="center">37.50%</td>
+                        <td class="center">0.375em</td>
+                        <td class="center">5pt</td>
+                    </tr>
+                    <tr>
+                        <td class="center">7px</td>
+                        <td class="center">43.80%</td>
+                        <td class="center">0.438em</td>
+                        <td class="center">5pt</td>
+                    </tr>
+                    <tr>
+                        <td class="center">8px</td>
+                        <td class="center">50%</td>
+                        <td class="center">0.500em</td>
+                        <td class="center">6pt</td>
+                    </tr>
+                    <tr>
+                        <td class="center">9px</td>
+                        <td class="center">56.30%</td>
+                        <td class="center">0.563em</td>
+                        <td class="center">7pt</td>
+                    </tr>
+                    <tr>
+                        <td class="center">10px</td>
+                        <td class="center">62.50%</td>
+                        <td class="center">0.625em</td>
+                        <td class="center">8pt</td>
+                    </tr>
+                    <tr>
+                        <td class="center">11px</td>
+                        <td class="center">68.80&</td>
+                        <td class="center">0.688em</td>
+                        <td class="center">8pt</td>
+                    </tr>
+                    <tr>
+                        <td class="center">12px</td>
+                        <td class="center">75.00%</td>
+                        <td class="center">0.750em</td>
+                        <td class="center">9pt</td>
+                    </tr>
+                    <tr>
+                        <td class="center">13px</td>
+                        <td class="center">81.30%</td>
+                        <td class="center">0.813em</td>
+                        <td class="center">10pt</td>
+                    </tr>
+                    <tr>
+                        <td class="center">14px</td>
+                        <td class="center">87.50%</td>
+                        <td class="center">0.875em</td>
+                        <td class="center">11pt</td>
+                    </tr>
+                    <tr>
+                        <td class="center">15px</td>
+                        <td class="center">93.80%</td>
+                        <td class="center">0.938em</td>
+                        <td class="center">11pt</td>
+                    </tr>
+                    <tr style="background-color: yellow; opacity: 0.9;">
+                        <td class="center">16px</td>
+                        <td class="center">100%</td>
+                        <td class="center">1.000em</td>
+                        <td class="center">12pt</td>
+                    </tr>
+                    <tr>
+                        <td class="center">17px</td>
+                        <td class="center">106.30%</td>
+                        <td class="center">1.063em</td>
+                        <td class="center">13pt</td>
+                    </tr>
+                    <tr>
+                        <td class="center">18px</td>
+                        <td class="center">112.50%</td>
+                        <td class="center">1.125em</td>
+                        <td class="center">14pt</td>
+                    </tr>
+                    <tr>
+                        <td class="center">19px</td>
+                        <td class="center">118.80%</td>
+                        <td class="center">1.188em</td>
+                        <td class="center">14pt</td>
+                    </tr>
+                    <tr>
+                        <td class="center">20px</td>
+                        <td class="center">125.00%</td>
+                        <td class="center">1.250em</td>
+                        <td class="center">15pt</td>
+                    </tr>
+                    <tr>
+                        <td class="center">21px</td>
+                        <td class="center">131.30%</td>
+                        <td class="center">1.313em</td>
+                        <td class="center">16pt</td>
+                    </tr>
+                    <tr>
+                        <td class="center">22px</td>
+                        <td class="center">137.50%</td>
+                        <td class="center">1.375em</td>
+                        <td class="center">17pt</td>
+                    </tr>
+                    <tr>
+                        <td class="center">23px</td>
+                        <td class="center">143.80%</td>
+                        <td class="center">1.438em</td>
+                        <td class="center">17pt</td>
+                    </tr><tr>
+                        <td class="center">24px</td>
+                        <td class="center">150.00%</td>
+                        <td class="center">1.500em</td>
+                        <td class="center">18pt</td>
+                    </tr>
+                </tbody>
+            </table>
+
             
         </article>
     </section>
