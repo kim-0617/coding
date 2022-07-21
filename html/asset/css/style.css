@@ -58,7 +58,7 @@ body {
 
 #main {
     padding: 20px;
-    min-width: 1300px;
+    max-width: 1300px;
     margin: 0 auto;
 }
 
