@@ -8,6 +8,10 @@
     <title>HTML 기초</title>
     <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
     <style>
+        li.active a{
+            background-color: #000;
+            color: #fff;
+        }
         /* 리셋 */
         * {
             margin: 0;
@@ -28,12 +32,12 @@
 
         #header nav ul li {
             list-style: none;
-            display: inline;
+            display: inline-block;
         }
 
         #header nav ul li a {
             text-decoration: none;
-            color: #000;
+            /* color: #000; */
             border: 1px solid #000;
             padding: 0.7vw 1vw;
             display: inline-block;
@@ -150,9 +154,9 @@
         <h1>HTML</h1>
         <nav>
             <ul>
-                <li><a href="basic.html">기초</a></li>
+                <li class="active"><a href="basic.html">기초</a></li>
                 <li><a href="#">주제별</a></li>
-                <li><a href="#">알파벳</a></li>
+                <li><a href="alphabet.html">알파벳</a></li>
             </ul>
         </nav>
     </header>
@@ -161,9 +165,9 @@
             <ul>
                 <li><a href="basic.html">기본 문서</a></li>
                 <li><a href="markup.html">기본 규칙</a></li>
-                <li><a href="valid.html">W3C validator</a></li>
+                <li><a href="web.html">W3C validator</a></li>
                 <li><a href="semantic.html">시멘틱 마크업</a></li>
-                <li><a href="inlineblock.html">블록 / 인라인 요소</a></li>
+                <li><a href="block.html">블록 / 인라인 요소</a></li>
             </ul>
         </nav>
         <article class="article">
