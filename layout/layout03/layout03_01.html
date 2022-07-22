@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+
+    <style>
+        * {
+            margin: 0;
+        }
+
+        body {
+            background-color: #FFF3E0;
+        }
+
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        #header {
+            width: 100%;
+            height: 100px;
+            background-color: #FFE0B2;
+        }
+
+        #nav {
+            width: 100%;
+            height: 100px;
+            background-color: #FFCC80;
+        }
+
+        #aside {
+            width: 30%;
+            height: 780px;
+            background-color: #FFB74D;
+            float: left;
+        }
+
+        #section {
+            width: 70%;
+            height: 780px;
+            background-color: #FFA726;
+            float: left;
+        }
+
+        #section #a {
+            background-color: #ddba1b;
+            height: 33.33%;
+        }
+
+        #section #b {
+            background-color: #ddb91b7a;
+            height: 33.33%;
+        }
+
+        #section #c {
+            background-color: #f1cf3507;
+            height: 33.33%;
+        }
+
+        #footer {
+            width: 100%;
+            height: 100px;
+            background-color: #FF9800;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="header"></div>
+        <div id="nav"></div>
+        <div id="aside"></div>
+        <div id="section">
+            <div id="a"></div>
+            <div id="b"></div>
+            <div id="c"></div>
+        </div>
+        <div id="footer"></div>
+    </div>
+</body>
+
+</html>
