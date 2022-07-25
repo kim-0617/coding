@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 데이터 타입</title>
+    <link rel="stylesheet" href="../asset/css/dracula.css">
+    <link rel="stylesheet" href="../asset/css/style.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">자료형</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- // header -->
+
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">자바스크립트 데이터 타입</h2>
+            <p class="t_box">
+                데이터 타입은 변수에 저장되는 데이터의 유형으로 자바스크립트에서는 원시데이터 타입과 객체데이터 타입으로 나눌 수 있습니다.
+            </p>
+
+            <hr>
+            <h3 class="t_tit2">원시 데이터 타입 (Primitive Data Type)</h3>
+            <p class="t_desc">원시 값(primitive, 또는 원시 자료형)이란 객체가 아니면서 메서드도 가지지 않는 데이터입니다.</p>
+            <table class="t_table">
+                <colgroup>
+                    <col>
+                    <col>
+                    <col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>데이터 종류</th>
+                        <th>설명</th>
+                        <th>비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">Number</td>
+                        <td>정수, 실수를 모두 포함한 자바스크립트의 숫자 형식이고, 64비트의 부동소수점 방식을 따른다.</td>
+                        <td>0을 조건문에 넣으면 false로 인식된다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">String</td>
+                        <td>16비트 유니코드 문자의 집합(UTF-16)으로 전세계 대부분의 문자를 표현한다. 작은따옴표(''), 큰따옴표(""), 백틱(``) 으로 텍스트를 감싸서 표현한다.</td>
+                        <td>'' (빈문자열)을 조건문에 넣으면 false로 인식된다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">Boolean</td>
+                        <td>논리의 참, 거짓. true와 false 뿐이다</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="ce">undefined</td>
+                        <td>변수를 초기화 하지 않을 경우 undefined로 표시된다. (정의되지 않음)</td>
+                        <td>false로 인식된다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">null</td>
+                        <td>아무것도 없다는 값을 할당할 때 사용됨</td>
+                        <td>false로 인식된다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">Symbol</td>
+                        <td>ES6에서 추가된 7번째 타입, 중복되지 않은 유일무이한 값</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="t_tit2">객체 데이터 타입 (Object Data Type)</h3>
+            <p class="t_desc">이름과 값을 가지는 데이터를 의미하는 프로퍼티(property)와 동작을 의미하는 메소드(method)를 포함할 수 있는 독립적 주체입니다.</p>
+            <table class="t_table">
+                <colgroup>
+                    <col>
+                    <col>
+                    <col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>데이터 종류</th>
+                        <th>설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">Array</td>
+                        <td>[]로 표현하며, 배열의 길이가 언제든지 늘어나거나 줄어들 수 있고 데이터를 연속적이지 않은 곳에 저장할 수 있습니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">Object</td>
+                        <td>{}로 표현하며, 다양한 키 모음 및 더 복잡한 엔티티들을 저장하는 데 사용됩니다. 객체는 Object() 생성자 또는 객체 초기자 / 리터럴({}) 구문를 통해 생성할 수 있습니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">Function</td>
+                        <td>함수는 Function객체이며, 함수 역시 명령문의 시퀀스로 구성된 함수 본문을 가집니다. 함수에 값을 '전달'하면, 함수는 값을 '반환'할 것입니다.</td>
+                    </tr>
+                </tbody>
+            </table>       
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:kkk5993@naver.com">kkk5993@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../asset/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+
+</html>
