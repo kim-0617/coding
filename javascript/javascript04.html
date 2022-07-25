@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="asset/css/dracula.css">
     <link rel="stylesheet" href="asset/css/style.css">
 </head>
+
 <body>
     <header id="header">
         <h1><a href="index.html">Javascript</a></h1>
@@ -35,7 +37,7 @@
         </nav>
     </header>
     <!-- //header -->
-    
+
     <main id="main">
         <div class="main_menu">
             <ul>
@@ -53,14 +55,151 @@
                 <li><a href="#sample12">12. continue문</a></li>
             </ul>
         </div>
-        <div class="main_script"></div>
+        <div class="main_sample">
+            <div id="sample01" class="sample">
+                <h3>01. if문 : 데이터 저장</h3>
+                <p>변수는 데이터를 저장하는 저장소 입니다. 이 저장소에는 숫자, 문자, 함수, 객체 등을 저장할 수 있습니다.</p>
+                <div class="script">
+                    <pre><code class="lanauage-js">var x = 100;     // 변수 x에 100 저장
+var y = 200;    // 변수 y에 200 저장
+var z = 'javascript';   // 변수 z에 javascript 문자열 데이터 저장
+
+document.write(x);
+document.write(y);
+document.write(z);
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample01_result">
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- // sample1 -->
+
+        </div>
         <div class="main_desc"></div>
     </main>
     <!-- //main -->
-    
+
     <footer id="footer">
         <a href="mailto:kkk5993@naver.com">kkk5993@naver.com</a>
     </footer>
     <!-- //footer -->
+
+    <script>
+        // 01. if문 (제어문 : 조건문, 반복문, 중지, 건너뛰기)  
+        {
+            // true, 1, "0", "1", 0<10, [], {}
+            // false, 0, null, undifined
+            if (1) {
+                document.write("실행되었습니다(true).");
+            }
+            else {
+                document.write("실행되었습니다(false).");
+            }
+        }
+
+        // 02. if문 생략
+        {
+            const num = 100;
+
+            if (num) document.write("실행되었습니다(true).");
+            else document.write("실행되었습니다(false).");
+        }
+
+        // 03. 다중 if문
+        {
+            const num = 100;
+
+            if (num == 90) {
+                document.write("실행되었습니다(num == 90).");
+            }
+            else if (num == 100) {
+                document.write("실행되었습니다(num == 100).");
+            }
+            else if (num == 110) {
+                document.write("실행되었습니다(num == 110).");
+            }
+            else if (num == 120) {
+                document.write("실행되었습니다(num == 120).");
+            }
+            else {
+                document.write("실행되었습니다(num == 값이 없음).");
+            }
+        }
+
+        // 04. 중첩 if문
+        {
+            const num = 100;
+
+            if (num == 100) {
+                document.write("실행되었습니다(1).");
+                if (num == 100) {
+                    document.write("실행되었습니다(2).");
+                    if (num == 100) {
+                        document.write("실행되었습니다(3).");
+                    }
+                }
+            }
+            else {
+                document.write("실행되었습니다.(4)");
+            }
+        }
+
+        // 05. 조건부 연산자 (삼항 연산자)
+        {
+            const num = 100;
+
+            // num값이 100이면 true 출력, 아니면 false 출력
+            if (num == 100) {
+                document.write("실행되었습니다(true).");
+            }
+            else {
+                document.write("실행되었습니다(false).");
+            }
+
+            document.write(num == 100 ? true : false);
+        }
+
+        // 06. switch문
+        {
+            const num = 100;
+
+            switch (num) {
+                case 100:
+                    document.write("실행되었습니다(num == 100).");
+                    break;
+                case 110:
+                    document.write("실행되었습니다(num == 110).");
+                    break;
+                case 120:
+                    document.write("실행되었습니다(num == 120).");
+                    break;
+                case 130:
+                    document.write("실행되었습니다(num == 130).");
+                    break;
+                default:
+                    document.write("실행되었습니다(num == 값이 없음).");
+            }
+        }
+
+        // 07. while문
+        {
+            let num = 1;
+
+            while(num <= 5){
+                document.write("실행되었습니다.");
+                num++;
+            }
+
+            for(let i = 0; i < 5; i++){
+                document.write("실행되었습니다.");
+            }
+        }
+    </script>
 </body>
+
 </html>
