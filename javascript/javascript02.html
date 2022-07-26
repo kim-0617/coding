@@ -35,6 +35,7 @@
                 <li><a href="study/for.html">반복문</a></li>
                 <li><a href="study/if.html">조건문</a></li>
                 <li><a href="study/type.html">자료형</a></li>
+                <li><a href="study/function.html">함수</a></li>
             </ul>
         </nav>
     </header>
@@ -395,7 +396,7 @@ num.forEach(function (element, index, array) {
             </div>
             <!-- // sample7 -->
 
-            <div id="sample08_2" class="sample">
+            <div id="sample08" class="sample">
                 <h3>08. 배열 : 데이터 불러오기 : for of</h3>
                 <p>for of는 배열의 요소 값들을 뽑아낼 때 사용합니다.</p>
                 <div class="script">
@@ -409,14 +410,14 @@ for (let i of arr) {
                 <div class="result">
                     <details>
                         <summary>결과보기</summary>
-                        <div class="sample08_2_result">
+                        <div class="sample08_result">
                         </div>
                     </details>
                 </div>
             </div>
             <!-- // sample8 -->
 
-            <div id="sample09_2" class="sample">
+            <div id="sample09" class="sample">
                 <h3>09. 배열 : 데이터 불러오기 : for in</h3>
                 <p>for in 방법은 배열의 인덱스를 뽑아내서 순회할 수 있는 방법입니다.</p>
                 <div class="script">
@@ -430,14 +431,14 @@ for (let i in arr) {
                 <div class="result">
                     <details>
                         <summary>결과보기</summary>
-                        <div class="sample09_2_result">
+                        <div class="sample09_result">
                         </div>
                     </details>
                 </div>
             </div>
             <!-- // sample9 -->
 
-            <div id="sample10_2" class="sample">
+            <div id="sample10" class="sample">
                 <h3>10. 배열 : 데이터 불러오기 : map()</h3>
                 <p>map()메서드는 forEach와 같은 기능을 제공합니다.</p>
                 <div class="script">
@@ -457,7 +458,7 @@ arr.map(function (el, index, array) {
                 <div class="result">
                     <details>
                         <summary>결과보기</summary>
-                        <div class="sample10_2_result">
+                        <div class="sample10_result">
                         </div>
                     </details>
                 </div>
@@ -678,7 +679,7 @@ arr.map(function (el, index, array) {
 
             for (let i of arr) {
                 // document.write(i);
-                document.querySelector('.sample08_2_result').innerHTML += i +"<br>"
+                document.querySelector('.sample08_result').innerHTML += i +"<br>"
             }
         }
 
@@ -688,7 +689,7 @@ arr.map(function (el, index, array) {
 
             for (let i in arr) {
                 // document.write(arr[i]);
-                document.querySelector('.sample09_2_result').innerHTML += arr[i] + "<br>"
+                document.querySelector('.sample09_result').innerHTML += arr[i] + "<br>"
             }
         }
 
@@ -710,15 +711,15 @@ arr.map(function (el, index, array) {
             // map()
             arr.map(function (el) {
                 // document.write(el);
-                document.querySelector('.sample10_2_result').innerHTML += el + "<br>";
+                document.querySelector('.sample10_result').innerHTML += el + "<br>";
             });
 
-            document.querySelector('.sample10_2_result').innerHTML += "★여러 매개변수 사용★ <br>";
+            document.querySelector('.sample10_result').innerHTML += "★여러 매개변수 사용★ <br>";
             arr.map(function (el, index, array) {
                 // document.write(el);
                 // document.write(index);
                 // document.write(array);
-                document.querySelector('.sample10_2_result').innerHTML += `요소 값 : ${el} 인덱스 : ${index} 배열 : ${array} <br>`;
+                document.querySelector('.sample10_result').innerHTML += `요소 값 : ${el} 인덱스 : ${index} 배열 : ${array} <br>`;
             });
         }
 

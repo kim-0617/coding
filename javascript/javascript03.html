@@ -33,6 +33,7 @@
                 <li><a href="study/for.html">반복문</a></li>
                 <li><a href="study/if.html">조건문</a></li>
                 <li><a href="study/type.html">자료형</a></li>
+                <li><a href="study/function.html">함수</a></li>
             </ul>
         </nav>
     </header>
@@ -72,7 +73,174 @@
                 <li><a href="#sample29">29. 클래스 상속</a></li>
             </ul>
         </div>
-        <div class="main_script"></div>
+        <div class="main_sample">
+            <div id="sample01" class="sample">
+                <h3>01. 함수 : 선언적 함수</h3>
+                <p>선언적 함수는 function키워드를 통해 선언합니다.</p>
+                <div class="script">
+<pre><code class="lanauage-js">function func(){
+    document.write("함수가 실행되었습니다. 1");
+}
+func();
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample01_result">
+                            함수가 실행되었습니다. 1
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- // sample1 -->
+
+            <div id="sample02" class="sample">
+                <h3>02. 함수 : 익명함수</h3>
+                <p>익명함수는 함수의 이름을 짓지 않고 사용하는 함수 입니다.</p>
+                <div class="script">
+<pre><code class="lanauage-js">func = function(){
+    document.write("함수가 실행되었습니다. 2");
+}
+func();
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample02_result">
+                            함수가 실행되었습니다. 2
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- // sample2 -->
+
+            <div id="sample03" class="sample">
+                <h3>03. 함수 : 매개변수 함수</h3>
+                <p>함수의 인자로 매개변수를 전달하면 함수의 지역변수로 사용할 수 있습니다.</p>
+                <div class="script">
+<pre><code class="lanauage-js">function func(str){
+    document.write(str);
+}
+func("함수가 실행되었습니다. 3");
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample03_result">
+                            함수가 실행되었습니다. 3
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- // sample3 -->
+
+            <div id="sample04" class="sample">
+                <h3>04. 함수 : 리턴값함수</h3>
+                <p>함수에서 return키워드를 통해서 값을 반환할 수 있습니다.</p>
+                <div class="script">
+<pre><code class="lanauage-js">function func(){
+    const str = "함수가 실행되었습니다. 4";
+    return str;
+}
+document.write(func());
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample04_result">
+                            함수가 실행되었습니다. 4
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- // sample4 -->
+
+            <div id="sample05" class="sample">
+                <h3>05. 화살표 함수 : 선언적함수</h3>
+                <p>화살표 함수로 더욱 간편하게 함수를 선언할 수 있습니다.</p>
+                <div class="script">
+<pre><code class="lanauage-js">func = () => document.write("함수가 실행되었습니다. 5");
+func();
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample05_result">
+                            함수가 실행되었습니다. 5
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- // sample5 -->
+
+            <div id="sample06" class="sample">
+                <h3>06. 화살표함수 : 익명함수</h3>
+                <p>화살표함수의 이름을 짓지 않고 변수에 담아서 사용합니다.</p>
+                <div class="script">
+<pre><code class="lanauage-js">const func = () => {
+    document.write("함수가 실행되었습니다. 6");
+}
+func();
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample06_result">
+                            함수가 실행되었습니다. 6
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- // sample6 -->
+
+            <div id="sample07" class="sample">
+                <h3>07. 화살표함수 : 매개변수 함수</h3>
+                <p>화살표 함수에도 매개변수를 전달할 수 있습니다. 매개변수가 한개인 경우에는 괄호를 생략할 수 있습니다.</p>
+                <div class="script">
+<pre><code class="lanauage-js">const func = str => document.write(str);
+func("함수가 실행되었습니다. 7");
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample07_result">
+                            함수가 실행되었습니다. 7
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- // sample7 -->
+
+            <div id="sample08" class="sample">
+                <h3>08. 화살표 함수 : 리턴값 함수</h3>
+                <p>화살표 함수도 마찬가지로 return키워드를 사용해서 값을 반환할 수 있습니다. 함수의 실행문이 return값 하나일 때 중괄호를 생략할 수 있습니다.</p>
+                <div class="script">
+<pre><code class="lanauage-js">const func = () => {
+    const str = "함수가 실행되었습니다. 8";
+    return str;
+}
+document.write(func());
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample08_result">
+                            함수가 실행되었습니다. 8
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- // sample8 -->
+
+        </div>
         <div class="main_desc"></div>
     </main>
     <!-- //main -->
@@ -81,5 +249,85 @@
         <a href="mailto:kkk5993@naver.com">kkk5993@naver.com</a>
     </footer>
     <!-- //footer -->
+    <script src="./asset/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <script>
+        // 01. 선언적 함수
+        {
+            function func(){
+                document.write("함수가 실행되었습니다. 1");
+            }
+            func();
+        }
+
+        // 02. 익명 함수
+        {
+            // 데이터 타입(자료형)
+            // const x = 100;
+            // const x1 = "100";
+            // const x2 = {};
+            // const x3 = {};
+            // const x4 = null, undefined;
+            // const x5 = function(){};
+            // const x6 = true, false;
+
+            func = function(){
+                document.write("함수가 실행되었습니다. 2");
+            }
+            func();
+        }
+
+        // 03. 매개변수 함수
+        // 변수 : 지역변수 + 전역변수 + 매개변수
+        // 함수 : 지역함수 + 전역함수
+        {
+            function func(str){
+                document.write(str);
+            }
+            func("함수가 실행되었습니다. 3");
+        }
+
+        // 04. 리턴값 함수
+        {
+            function func(){
+                const str = "함수가 실행되었습니다. 4";
+                return str;
+            }
+            document.write(func());
+        }
+
+        // 05. 화살표 함수 (선언적 함수)
+        {
+            // const func = ()=>{
+            //     document.write("함수가 실행되었습니다. 5");
+            // }
+            func = () => document.write("함수가 실행되었습니다. 5");
+            func();
+        }
+
+        // 06. 화살표 함수 (익명 함수)
+        {
+            const func = () => {
+                document.write("함수가 실행되었습니다. 6");
+            }
+            func();
+        }
+
+        // 07. 화살표 함수 (매개변수 함수)
+        {
+            const func = str => document.write(str);
+            func("함수가 실행되었습니다. 7");
+        }
+
+        // 08. 화살표 함수 (리턴값 함수)
+        {
+            const func = () => {
+                const str = "함수가 실행되었습니다. 8";
+                return str;
+            }
+            document.write(func());
+        }
+    </script>
 </body>
 </html>

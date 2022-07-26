@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 레퍼런스 북</title>
+    <!-- 구글 아이콘 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="asset/css/dracula.css">
+    <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/base16/solarized-light.min.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
+        <span>이름 : 김성현</span>
+    </header>
+    <!-- // header -->
+
+    <main id="main">
+        <header class="main_header">
+            <h2>HTML <em>레퍼런스 북</em></h2>
+        </header>
+        <nav class="main_menu">
+            <ul>
+                <li><a href="alphabet.html">알파벳</a></li>
+                <li><a href="basic.html">기초문법</a></li>
+                <li><a href="block.html">블록구조 / 인라인구조</a></li>
+                <li><a href="web.html">웹표준 / 웹접근성 / 웹호환성</a></li>
+                <li><a href="semantic.html">시멘틱 태그</a></li>
+                <li><a href="seo.html">검색엔진시스템(SEO)</a></li>
+            </ul>
+            <ul>
+                <li><a href="layout01.html">레이아웃01</a></li>
+                <li><a href="layout02.html">레이아웃02</a></li>
+                <li class="active"><a href="layout03.html">레이아웃03</a></li>
+                <li><a href="layout04.html">레이아웃04</a></li>
+                <li><a href="layout05.html">레이아웃05</a></li>
+            </ul>
+        </nav>
+        <div class="main_refer">
+            <div class="document">
+                <h2 class="t_tit">레이아웃03</h2>
+                <p class="t_desc">
+                    이번 레이아웃은 저번 시간에 배웠던 레이아웃보다 한 단계 진화해서, 
+                    순서대로 header, nav, (aside, section(part1, part2, part3)), footer로 구성되어 있습니다.
+                    <br> 다음은 레이아웃 구성형태 입니다.
+                </p>
+                <div class="t_frame">
+                    <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FKvRmoGfc3g9ul7Lnj1feKo%2F%25EB%25A0%2588%25EC%259D%25B4%25EC%2595%2584%25EC%259B%2583%3Fnode-id%3D28%253A71" allowfullscreen></iframe>
+                </div>
+
+                <h3 class="tit_2">01. float을 이용한 레이아웃</h3>
+                <p class="t_desc2">
+                    aside 영역과 section 영역을 한줄에 배치하기 위해서 float속성을 사용하겠습니다. section의 자식들은 부모에 float를 주면 알아서 배치됩니다.
+                    하지만 float의 영향 때문에 밑의 footer영역이 없어지기 때문에 clear:both 속성을 사용해서 float에서 자유롭게 해줍니다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-css">*{margin: 0;}
+body{background-color: #FFF3E0;}
+#wrap{
+    width: 1200px;
+    margin: 0 auto;
+}
+#header{
+    width: 100%;
+    height: 100px;
+    background-color: #FFE0B2;
+}
+#nav{
+    width: 100%;
+    height: 100px;
+    background-color: #FFCC80;
+}
+#aside{
+    width: 30%;
+    height: 780px;
+    background-color: #FFB74D;
+    float: left;
+}
+#section{
+    width: 70%;
+    height: 780px;
+    background-color: #FFA726;
+    float: left;
+}
+#section #a{
+    background-color: #ddba1b;
+    height: 33.33%;
+}
+#section #b{
+    background-color: #ddb91b7a;
+    height: 33.33%;
+}
+#section #c{
+    background-color: #f1cf3507;
+    height: 33.33%;
+}
+#footer{
+    width: 100%;
+    height: 100px;
+    background-color: #FF9800;
+    clear: both;
+}
+
+@media(max-width:1220px){
+    #wrap{
+        width: 96%;
+    }
+}
+@media(max-width:768px){
+    #wrap{
+        width: 100%;
+    }
+}
+@media(max-width:480px){
+    #aside{
+        width: 100%;
+        height: 300px;
+        float: left;
+    }
+    #section{
+        width: 100%;
+        height: 480px;
+        float: left;
+    }
+}
+</code></pre>
+                </div>
+                <h4 class="t_tit3">결과</h4>
+                <div class="t_frame">
+                    <iframe scrolling="no" title="Layout-float" src="https://codepen.io/kim-0617/embed/MWVvOGK?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/kim-0617/pen/MWVvOGK">
+                        Layout-float</a> by kim-0617 (<a href="https://codepen.io/kim-0617">@kim-0617</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+                </div>
+
+                <h3 class="tit_2">02. flex를 이용한 레이아웃</h3>
+                <p class="t_desc2">
+                    flex속성은 모든 태그의 부모인 wrap에 display:flex를 지정 후, 요소들이 잘 배치될 수 있도록 flex-wrap : wrap;를 사용해주면 간단하게 레이아웃이 완성됩니다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-css">*{margin: 0;}
+body{background-color: #E1F5FE;}
+#wrap{
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+#header{
+    width: 100%;
+    height: 100px;
+    background-color: #B3E5FC;
+}
+#nav{
+    width: 100%;
+    height: 100px;
+    background-color: #81D4FA;
+}
+#aside{
+    width: 30%;
+    height: 780px;
+    background-color: #4FC3F7;
+}
+#section{
+    width: 70%;
+    height: 780px;
+}
+#section #a{
+    background-color: #29B6F6;
+    height: 33.33%;
+}
+#section #b{
+    background-color: #03A9F4;
+    height: 33.33%;
+}
+#section #c{
+    background-color: #039BE5;
+    height: 33.33%;
+}
+#footer{
+    width: 100%;
+    height: 100px;
+    background-color: #0288D1;
+}
+
+@media(max-width:1220px){
+    #wrap{
+        width: 96%;
+    }
+}
+@media(max-width:768px){
+    #wrap{
+        width: 100%;
+    }
+}
+@media(max-width:480px){
+    #aside{
+        width: 100%;
+        height: 300px;
+    }
+    #section{
+        width: 100%;
+        height: 480px;
+    }
+}
+</code></pre>
+                </div>
+                <h4 class="t_tit3">결과</h4>
+                <div class="t_frame">
+                    <iframe scrolling="no" title="Layout-flex" src="https://codepen.io/kim-0617/embed/jOzLaKE?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/kim-0617/pen/jOzLaKE">
+                        Layout-flex</a> by kim-0617 (<a href="https://codepen.io/kim-0617">@kim-0617</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+                </div>
+
+                <h3 class="tit_2">03. grid를 이용한 레이아웃</h3>
+                <p class="t_desc2">
+                    grid속성은 모든 태그들을 감싸는 부모태그에서 자식요소의 모든 것을 컨트롤 하는 것 입니다. 부모태그에서 grid-templates-area로 영역을 지정 후 grid-templates-row & column으로 열너비와 행높이를 지정합니다. 또한, 각각 자식태그에서 grid-templates-area로정의한 영역의 이름을 gird-area로 정의해 주어야 합니다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-css">* {
+    margin: 0;
+}
+
+body {
+    background-color: #E1F5FE;
+}
+
+#wrap {
+    width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "nav nav"
+        "aside section"
+        "footer footer"
+    ;
+    grid-template-columns: 30%, 70%;
+    grid-template-rows: 100px 100px 780px 100px;
+}
+
+#header {
+    background-color: #B3E5FC;
+    grid-area: header;
+}
+
+#nav {
+    background-color: #81D4FA;
+    grid-area: nav;
+}
+
+#aside {
+    background-color: #4FC3F7;
+    grid-area: aside;
+}
+
+#section {
+    grid-area: section;
+}
+
+#section #a {
+    background-color: #29B6F6;
+    height: 33.33%;
+}
+
+#section #b {
+    background-color: #03A9F4;
+    height: 33.33%;
+}
+
+#section #c {
+    background-color: #039BE5;
+    height: 33.33%;
+}
+
+#footer {
+    background-color: #0288D1;
+    grid-area: footer;
+}
+
+@media(max-width:1220px) {
+    #wrap {
+        width: 96%;
+    }
+}
+
+@media(max-width:768px) {
+    #wrap {
+        width: 100%;
+    }
+}
+
+@media(max-width:480px) {
+    #wrap {
+        grid-template-areas:
+            "header header"
+            "nav nav"
+            "aside aside"
+            "section section"
+            "footer footer"
+        ;
+        grid-template-rows: 100px 100px 300px 480px 100px;
+    }
+}
+</code></pre>
+                </div>
+                <h4 class="t_tit3">결과</h4>
+                <div class="t_frame">
+                    <iframe scrolling="no" title="Layout-grid" src="https://codepen.io/kim-0617/embed/KKovyBp?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/kim-0617/pen/KKovyBp">
+                        Layout-grid</a> by kim-0617 (<a href="https://codepen.io/kim-0617">@kim-0617</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- // main -->
+
+    <footer id="footer">
+        <a href="mailto:kkk5993@naver.com">kkk5993@naver.com</a>
+    </footer>
+    <!-- // footer -->
+    <script src="asset/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>
