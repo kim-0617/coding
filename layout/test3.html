@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+
+    <style>
+        *{
+            margin: 0;
+        }
+        #wrap{
+            width: 100%;
+        }
+        #header{
+            width: 100%;
+            height: 100px;
+            background-color: #F48080;
+            text-align: center;
+            line-height: 100px;
+        }
+        #banner{
+            width: 100%;
+            height: 400px;
+            background-color: #EC5C5C;
+            text-align: center;
+            line-height: 400px;
+        }
+        #ad{
+            width: 100%;
+            height: 500px;
+            background-color: #FEA5A5;
+            text-align: center;
+            line-height: 250px;
+        }
+        #notice{
+            width: 100%;
+            height: 500px;
+            background-color: #FFBFBF;
+            text-align: center;
+            line-height: 500px;
+        }
+        #footer{
+            width: 100%;
+            height: 100px;
+            background-color: #FF9C9C;
+            text-align: center;
+            line-height: 100px;
+        }
+        .container{
+            width: 1200px;
+            height: inherit;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.3);
+            overflow: hidden;
+        }
+        #header .logo{
+            width: 300px;
+            height: 100px;
+            float: left;
+            background-color: #F86464;
+        }
+        #header .menu{
+            width: 900px;
+            height: 100px;
+            float: left;
+            background-color: #FEA5A5;
+        }
+        #ad .ad1{
+            height: 50%;
+            background-color: #C66868;
+        }
+        #ad .ad2{
+            height: 50%;
+            background-color: #EA7F7F;
+        }
+
+        #notice .n1{
+            width: 740px;
+            height: 500px;
+            background-color: #EB6666;
+            float: left;
+        }
+        #notice .n2{
+            width: 460px;
+            height: 500px;
+            float: left;
+            line-height: 250px;
+        }
+        #notice .n2 .n21{
+            height: 50%;
+            background-color: #CE5F5F;
+        }
+        #notice .n2 .n22{
+            height: 50%;
+            background-color: #FE7F7F;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="container">
+                <div class="logo"></div>
+                <div class="menu"></div>
+            </div>
+        </div>
+        <div id="banner">
+            <div class="container"></div>
+        </div>
+        <div id="ad">
+            <div class="container">
+                <div class="ad1"></div>
+                <div class="ad2"></div>
+            </div>
+        </div>
+        <div id="notice">
+            <div class="container">
+                <div class="n1"></div>
+                <div class="n2">
+                    <div class="n21"></div>
+                    <div class="n22"></div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="container"></div>
+        </div>
+    </div>
+
+    <script>
+        let logo = document.querySelector('.logo');
+        let menu = document.querySelector('.menu');
+        let img = document.querySelector('#banner .container');
+        let ad1 = document.querySelector('.ad1');
+        let ad2 = document.querySelector('.ad2');
+        let n1 = document.querySelector('.n1');
+        let n21 = document.querySelector('.n2 .n21');
+        let n22= document.querySelector('.n2 .n22');
+        let footer = document.querySelector('#footer .container');
+
+        let tags = [logo, menu, img, ad1, ad2, n1, n21, n22, footer];
+        let arr = ['로고','메뉴','이미지슬라이드','광고1','광고2','공지사항1','공지사항2','공지사항3','푸터'];
+        
+        for(let i = 0; i<tags.length; i++){
+            if(tags[i] === img){
+                tags[i].innerText += arr[i];
+                for(let j = 1; j < 15; j++){
+                    if(j % 2 === 0) tags[i].innerText += j + " "; 
+                }
+            }
+            else{
+                tags[i].innerText = arr[i];
+            }
+        }
+    </script>
+</body>
+</html>
