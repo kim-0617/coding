@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 레퍼런스 북</title>
+    <!-- 구글 아이콘 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="asset/css/dracula.css">
+    <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/base16/solarized-light.min.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
+        <span>이름 : 김성현</span>
+    </header>
+    <!-- // header -->
+
+    <main id="main">
+        <header class="main_header">
+            <h2>HTML <em>레퍼런스 북</em></h2>
+        </header>
+        <nav class="main_menu">
+            <ul>
+                <li><a href="alphabet.html">알파벳</a></li>
+                <li><a href="basic.html">기초문법</a></li>
+                <li><a href="block.html">블록구조 / 인라인구조</a></li>
+                <li><a href="web.html">웹표준 / 웹접근성 / 웹호환성</a></li>
+                <li><a href="semantic.html">시멘틱 태그</a></li>
+                <li><a href="seo.html">검색엔진시스템(SEO)</a></li>
+            </ul>
+            <ul>
+                <li><a href="layout01.html">레이아웃01</a></li>
+                <li><a href="layout02.html">레이아웃02</a></li>
+                <li><a href="layout03.html">레이아웃03</a></li>
+                <li class="active"><a href="layout04.html">레이아웃04</a></li>
+                <li><a href="layout05.html">레이아웃05</a></li>
+            </ul>
+        </nav>
+        <div class="main_refer">
+            <div class="document">
+                <h2 class="t_tit">레이아웃06</h2>
+                <p class="t_desc">
+                    레이아웃 6번도 바로 가겠습니다. 이번 디자인 역시 웹디자인 기능사에서도 출제가 되는 디자인입니다.
+                    헤더영역(2부분) / 광고배너영역(2부분) / 섹션영역(3부분) / 푸터영역(3부분) 로 구성되는 레이아웃 입니다.
+                    각각의 요소마다 레이아웃을 적용해주어야겠네요.
+                </p>
+                <div class="t_frame">
+                    <iframe width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FKvRmoGfc3g9ul7Lnj1feKo%2F%25EB%25A0%2588%25EC%259D%25B4%25EC%2595%2584%25EC%259B%2583%3Fnode-id%3D194%253A26" allowfullscreen></iframe>
+                </div>
+
+                <h3 class="tit_2">float을 이용한 레이아웃</h3>
+                <p class="t_desc2">
+                   모든 부분에 float 속성을 부여합니다. 그리고 부모요소에 overflow : hidden 속성을 주면 레이아웃을 깔끔히 배치할 수 있습니다.
+                    텍스트 정렬은 text-align : center 속성과 line-height : 요소의 높이 만큼 주면 간단히 정렬할 수 있습니다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-css">*{
+    margin: 0;
+}
+#wrap{
+    width: 100%;
+}
+#header{
+    width: 100%;
+    height: 100px;
+    background-color: #F48080;
+    text-align: center;
+    line-height: 100px;
+}
+#banner{
+    width: 100%;
+    height: 400px;
+    background-color: #EC5C5C;
+    text-align: center;
+    line-height: 400px;
+}
+#ad{
+    width: 100%;
+    height: 500px;
+    background-color: #FEA5A5;
+    text-align: center;
+    line-height: 250px;
+}
+#notice{
+    width: 100%;
+    height: 500px;
+    background-color: #FFBFBF;
+    text-align: center;
+    line-height: 500px;
+}
+#footer{
+    width: 100%;
+    height: 100px;
+    background-color: #FF9C9C;
+    text-align: center;
+    line-height: 100px;
+}
+.container{
+    width: 1200px;
+    height: inherit;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+}
+#header .logo{
+    width: 300px;
+    height: 100px;
+    float: left;
+    background-color: #F86464;
+}
+#header .menu{
+    width: 900px;
+    height: 100px;
+    float: left;
+    background-color: #FEA5A5;
+}
+#ad .ad1{
+    height: 50%;
+    background-color: #C66868;
+}
+#ad .ad2{
+    height: 50%;
+    background-color: #EA7F7F;
+}
+
+#notice .n1{
+    width: 740px;
+    height: 500px;
+    background-color: #EB6666;
+    float: left;
+}
+#notice .n2{
+    width: 460px;
+    height: 500px;
+    float: left;
+    line-height: 250px;
+}
+#notice .n2 .n21{
+    height: 50%;
+    background-color: #CE5F5F;
+}
+#notice .n2 .n22{
+    height: 50%;
+    background-color: #FE7F7F;
+}
+</code></pre>
+                </div>
+
+                <h4 class="t_tit3">결과</h4>
+                <div class="t_frame">
+                    <iframe height="800" style="width: 100%;" scrolling="no" title="Layout06" src="https://codepen.io/kim-0617/embed/YzaEyVV?default-tab=result&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/kim-0617/pen/YzaEyVV">
+                        Layout06</a> by kim-0617 (<a href="https://codepen.io/kim-0617">@kim-0617</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- // main -->
+
+    <footer id="footer">
+        <a href="mailto:kkk5993@naver.com">kkk5993@naver.com</a>
+    </footer>
+    <!-- // footer -->
+    <script src="asset/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 레퍼런스 북</title>
+    <!-- 구글 아이콘 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="asset/css/dracula.css">
+    <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/base16/solarized-light.min.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
+        <span>이름 : 김성현</span>
+    </header>
+    <!-- // header -->
+
+    <main id="main">
+        <header class="main_header">
+            <h2>HTML <em>레퍼런스 북</em></h2>
+        </header>
+        <nav class="main_menu">
+            <ul>
+                <li><a href="alphabet.html">알파벳</a></li>
+                <li><a href="basic.html">기초문법</a></li>
+                <li><a href="block.html">블록구조 / 인라인구조</a></li>
+                <li><a href="web.html">웹표준 / 웹접근성 / 웹호환성</a></li>
+                <li><a href="semantic.html">시멘틱 태그</a></li>
+                <li><a href="seo.html">검색엔진시스템(SEO)</a></li>
+            </ul>
+            <ul>
+                <li><a href="layout01.html">레이아웃01</a></li>
+                <li><a href="layout02.html">레이아웃02</a></li>
+                <li><a href="layout03.html">레이아웃03</a></li>
+                <li class="active"><a href="layout04.html">레이아웃04</a></li>
+                <li><a href="layout05.html">레이아웃05</a></li>
+            </ul>
+        </nav>
+        <div class="main_refer">
+            <div class="document">
+                <h2 class="t_tit">레이아웃08</h2>
+                <p class="t_desc">
+                    레이아웃 8번 입니다. 이런 레이아웃은 웹디자인 기능사에서도 출제가 되는 디자인입니다.
+                    헤더영역 / 광고배너영역 / 섹션영역(2부분 -> 1부분 위아래로 3등분 -> 맨위에요소(3등분), 맨아래요소(2등분)) / 푸터영역 으로 구성되는 레이아웃 입니다.
+                </p>
+                <div class="t_frame">
+                    <iframe width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FKvRmoGfc3g9ul7Lnj1feKo%2F%25EB%25A0%2588%25EC%259D%25B4%25EC%2595%2584%25EC%259B%2583%3Fnode-id%3D209%253A77" allowfullscreen></iframe>
+                </div>
+
+                <h3 class="tit_2">float을 이용한 레이아웃</h3>
+                <p class="t_desc2">
+                    위아래로 나뉜다면 부모요소를 두고 위아래로 나뉘는 요소를 묶습니다.
+                    양옆으로 배치되는 레이아웃은 계속 해왔듯이 float을 줘서 배치합니다. 그리고 부모요소에 overflow : hidden 속성을 주면 레이아웃을 깔끔히 배치할 수 있습니다.
+                    텍스트 정렬은 text-align : center 속성과 line-height : 요소의 높이 만큼 주면 간단히 정렬할 수 있습니다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-css">}*{
+    margin: 0;
+    padding: 0;
+}
+#wrap{
+    width: 100%;
+}
+#header{
+    width: 100%;
+    height: 100px;
+    background-color: #E0F2F1;
+}
+#section{
+    width: 100%;
+    height: 880px;
+    background-color: #26A69A;
+}
+#footer{
+    width: 100%;
+    height: 100px;
+    background-color: #00897B;
+}
+
+.container{
+    width: 1200px;
+    margin: 0 auto;
+    height: inherit;
+    overflow: hidden;
+    background-color: rgba(255,255,255,0.3);
+}
+.header{
+    background-color: #B2DFDB;
+    height: 100px;
+}
+.footer{
+    background-color: #00796B;
+    height: 100px;
+}
+
+#section .s1{
+    width: 324px;
+    height: 880px;
+    float: left;
+    background-color: #4DB6AC;
+}
+#section .s2{
+    width: 876px;
+    height: 880px;
+    float: left;
+}
+#section .s2 .s_top{
+    width: 876px;
+    height: 300px;
+}
+#section .s2 .s_top .t1{
+    width: 33.33%;
+    height: 300px;
+    background-color: #68EEE2;
+    float: left;
+}
+#section .s2 .s_top .t2{
+    width: 33.33%;
+    height: 300px;
+    background-color: #5CDDD1;
+    float: left;
+}
+#section .s2 .s_top .t3{
+    width: 33.33%;
+    height: 300px;
+    background-color: #68EEE2;
+    float: left;
+}
+#section .s2 .s_mid{
+    width: inherit;
+    height: 300px;
+    background-color: #009688;
+}
+#section .s2 .s_bot{
+    width: inherit;
+    height: 280px;
+}
+#section .s2 .s_bot .b1{
+    width: 50%;
+    height: 300px;
+    background-color: #39D1C3;
+    float: left;
+}
+#section .s2 .s_bot .b2{
+    width: 50%;
+    height: 300px;
+    background-color: #68D3C9;
+    float: left;
+}
+</code></pre>
+                </div>
+
+                <h4 class="t_tit3">결과</h4>
+                <div class="t_frame">
+                    <iframe height="800" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/kim-0617/embed/PoROPQe?default-tab=result&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/kim-0617/pen/PoROPQe">
+                        Untitled</a> by kim-0617 (<a href="https://codepen.io/kim-0617">@kim-0617</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- // main -->
+
+    <footer id="footer">
+        <a href="mailto:kkk5993@naver.com">kkk5993@naver.com</a>
+    </footer>
+    <!-- // footer -->
+    <script src="asset/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>
