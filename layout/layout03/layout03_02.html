@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,87 +8,138 @@
     <title>Layout</title>
 
     <style>
-        *{margin: 0;}
-        body{background-color: #E1F5FE;}
-        #wrap{
+        * {
+            margin: 0;
+        }
+
+        body {
+            background-color: #E1F5FE;
+        }
+
+        #wrap {
             width: 1200px;
             margin: 0 auto;
         }
-        #header{
+
+        #header {
             width: 100%;
             height: 100px;
             background-color: #B3E5FC;
         }
-        #nav{
+
+        #nav {
             width: 100%;
             height: 100px;
             background-color: #81D4FA;
         }
-        #aside{
-            width: 30%;
+
+        #aside {
+            width: 25%;
             height: 780px;
             background-color: #4FC3F7;
             float: left;
         }
-        #section{
-            width: 70%;
-            height: 780px;
+
+        #section_a {
+            width: 75%;
+            background-color: #29B6F6;
+            height: 260px;
             float: left;
         }
-        #section #a{
-            background-color: #29B6F6;
-            height: 33.33%;
-        }
-        #section #b{
+
+        #section_b {
+            width: 75%;
             background-color: #03A9F4;
-            height: 33.33%;
+            height: 260px;
+            float: left;
         }
-        #section #c{
+
+        #section_c {
+            width: 75%;
             background-color: #039BE5;
-            height: 33.33%;
+            height: 260px;
+            float: left;
         }
-        #footer{
+
+        #footer {
             width: 100%;
             height: 100px;
             background-color: #0288D1;
             clear: both;
         }
 
-        @media(max-width:1220px){
-            #wrap{
+        @media(max-width:1220px) {
+            #wrap {
                 width: 96%;
             }
-        }
-        @media(max-width:768px){
-            #wrap{
-                width: 100%;
+
+            #section_a{
+                height: 260px;
+            }
+            #section_b {
+                width: 37.5%;
+                height: 520px;
+            }
+
+            #section_c {
+                width: 37.5%;
+                height: 520px;
             }
         }
-        @media(max-width:480px){
+
+        @media(max-width:768px) {
+            #wrap {
+                width: 100%;
+            }
             #aside{
+                width: 33%;
+            }
+            #section_a{
+                width: 67%;
+                height: 390px;
+            }
+            #section_b {
+                width: 67%;
+                height: 390px;
+            }
+
+            #section_c {
+                display: none;
+            }
+        }
+
+        @media(max-width:480px) {
+            #aside {
                 width: 100%;
                 height: 300px;
-                float: left;
             }
-            #section{
+
+            #section_a {
                 width: 100%;
-                height: 480px;
-                float: left;
+                height: 200px;
+            }
+            #section_b {
+                width: 100%;
+                height: 430px;
+            }
+            #section_c {
+                width: 100%;
+                height: 150px;
             }
         }
     </style>
 </head>
+
 <body>
     <div id="wrap">
         <div id="header"></div>
         <div id="nav"></div>
         <div id="aside"></div>
-        <div id="section">
-            <div id="a"></div>
-            <div id="b"></div>
-            <div id="c"></div>
-        </div>
+        <div id="section_a"></div>
+        <div id="section_b"></div>
+        <div id="section_c"></div>
         <div id="footer"></div>
     </div>
 </body>
+
 </html>

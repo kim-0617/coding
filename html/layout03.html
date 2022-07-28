@@ -60,73 +60,123 @@
                     하지만 float의 영향 때문에 밑의 footer영역이 없어지기 때문에 clear:both 속성을 사용해서 float에서 자유롭게 해줍니다.
                 </p>
                 <div class="t_code">
-<pre><code class="language-css">*{margin: 0;}
-body{background-color: #FFF3E0;}
-#wrap{
+<pre><code class="language-css">* {
+    margin: 0;
+}
+
+body {
+    background-color: #E1F5FE;
+}
+
+#wrap {
     width: 1200px;
     margin: 0 auto;
 }
-#header{
+
+#header {
     width: 100%;
     height: 100px;
-    background-color: #FFE0B2;
+    background-color: #B3E5FC;
 }
-#nav{
+
+#nav {
     width: 100%;
     height: 100px;
-    background-color: #FFCC80;
+    background-color: #81D4FA;
 }
-#aside{
-    width: 30%;
+
+#aside {
+    width: 25%;
     height: 780px;
-    background-color: #FFB74D;
+    background-color: #4FC3F7;
     float: left;
 }
-#section{
-    width: 70%;
-    height: 780px;
-    background-color: #FFA726;
+
+#section_a {
+    width: 75%;
+    background-color: #29B6F6;
+    height: 260px;
     float: left;
 }
-#section #a{
-    background-color: #ddba1b;
-    height: 33.33%;
+
+#section_b {
+    width: 75%;
+    background-color: #03A9F4;
+    height: 260px;
+    float: left;
 }
-#section #b{
-    background-color: #ddb91b7a;
-    height: 33.33%;
+
+#section_c {
+    width: 75%;
+    background-color: #039BE5;
+    height: 260px;
+    float: left;
 }
-#section #c{
-    background-color: #f1cf3507;
-    height: 33.33%;
-}
-#footer{
+
+#footer {
     width: 100%;
     height: 100px;
-    background-color: #FF9800;
+    background-color: #0288D1;
     clear: both;
 }
 
-@media(max-width:1220px){
-    #wrap{
+@media(max-width:1220px) {
+    #wrap {
         width: 96%;
     }
-}
-@media(max-width:768px){
-    #wrap{
-        width: 100%;
+
+    #section_a{
+        height: 260px;
+    }
+    #section_b {
+        width: 37.5%;
+        height: 520px;
+    }
+
+    #section_c {
+        width: 37.5%;
+        height: 520px;
     }
 }
-@media(max-width:480px){
+
+@media(max-width:768px) {
+    #wrap {
+        width: 100%;
+    }
     #aside{
+        width: 33%;
+    }
+    #section_a{
+        width: 67%;
+        height: 390px;
+    }
+    #section_b {
+        width: 67%;
+        height: 390px;
+    }
+
+    #section_c {
+        display: none;
+    }
+}
+
+@media(max-width:480px) {
+    #aside {
         width: 100%;
         height: 300px;
-        float: left;
     }
-    #section{
+
+    #section_a {
         width: 100%;
-        height: 480px;
-        float: left;
+        height: 200px;
+    }
+    #section_b {
+        width: 100%;
+        height: 430px;
+    }
+    #section_c {
+        width: 100%;
+        height: 150px;
     }
 }
 </code></pre>
@@ -145,69 +195,135 @@ body{background-color: #FFF3E0;}
                     flex속성은 모든 태그의 부모인 wrap에 display:flex를 지정 후, 요소들이 잘 배치될 수 있도록 flex-wrap : wrap;를 사용해주면 간단하게 레이아웃이 완성됩니다.
                 </p>
                 <div class="t_code">
-<pre><code class="language-css">*{margin: 0;}
-body{background-color: #E1F5FE;}
-#wrap{
+<pre><code class="language-css">* {
+    margin: 0;
+}
+
+body {
+    background-color: #E1F5FE;
+}
+
+#wrap {
     width: 1200px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
 }
-#header{
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 75%;
+}
+#header {
     width: 100%;
     height: 100px;
     background-color: #B3E5FC;
 }
-#nav{
+
+#nav {
     width: 100%;
     height: 100px;
     background-color: #81D4FA;
 }
-#aside{
-    width: 30%;
+
+#aside {
+    width: 25%;
     height: 780px;
     background-color: #4FC3F7;
 }
-#section{
-    width: 70%;
-    height: 780px;
-}
-#section #a{
+
+#section_a {
+    width: 100%;
     background-color: #29B6F6;
-    height: 33.33%;
+    height: 260px;
 }
-#section #b{
+
+#section_b {
+    width: 100%;
     background-color: #03A9F4;
-    height: 33.33%;
+    height: 260px;
 }
-#section #c{
+
+#section_c {
+    width: 100%;
     background-color: #039BE5;
-    height: 33.33%;
+    height: 260px;
 }
-#footer{
+
+#footer {
     width: 100%;
     height: 100px;
     background-color: #0288D1;
 }
 
-@media(max-width:1220px){
-    #wrap{
+@media(max-width:1220px) {
+    #wrap {
         width: 96%;
     }
-}
-@media(max-width:768px){
-    #wrap{
-        width: 100%;
+
+    #section_a {
+        height: 260px;
+    }
+
+    #section_b {
+        width: 50%;
+        height: 520px;
+    }
+
+    #section_c {
+        width: 50%;
+        height: 520px;
     }
 }
-@media(max-width:480px){
-    #aside{
+
+@media(max-width:768px) {
+    #wrap {
+        width: 100%;
+    }
+
+    #aside {
+        width: 25%;
+    }
+
+    #section_a {
+        width: 100%;
+        height: 390px;
+    }
+
+    #section_b {
+        width: 100%;
+        height: 390px;
+    }
+
+    #section_c {
+        display: none;
+    }
+}
+
+@media(max-width:480px) {
+    #aside {
         width: 100%;
         height: 300px;
     }
-    #section{
+    .container{
         width: 100%;
-        height: 480px;
+    }
+
+    #section_a {
+        width: 100%;
+        height: 200px;
+    }
+
+    #section_b {
+        width: 100%;
+        height: 430px;
+    }
+
+    #section_c {
+        display: block;
+        width: 100%;
+        height: 150px;
     }
 }
 </code></pre>
@@ -241,11 +357,13 @@ body {
     grid-template-areas:
         "header header"
         "nav nav"
-        "aside section"
+        "aside section_a"
+        "aside section_b"
+        "aside section_c"
         "footer footer"
     ;
-    grid-template-columns: 30%, 70%;
-    grid-template-rows: 100px 100px 780px 100px;
+    grid-template-rows: 100px 100px 260px 260px 260px 100px;
+    grid-template-columns: 25% 75%;
 }
 
 #header {
@@ -263,23 +381,19 @@ body {
     grid-area: aside;
 }
 
-#section {
-    grid-area: section;
-}
-
-#section #a {
+#section_a {
     background-color: #29B6F6;
-    height: 33.33%;
+    grid-area: section_a;
 }
 
-#section #b {
+#section_b {
     background-color: #03A9F4;
-    height: 33.33%;
+    grid-area: section_b;
 }
 
-#section #c {
+#section_c {
     background-color: #039BE5;
-    height: 33.33%;
+    grid-area: section_c;
 }
 
 #footer {
@@ -290,25 +404,53 @@ body {
 @media(max-width:1220px) {
     #wrap {
         width: 96%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-areas:
+            "header header header"
+            "nav nav nav"
+            "aside section_a section_a"
+            "aside section_b section_c"
+            "footer footer footer"
+        ;
+        grid-template-rows: 100px 100px 260px 520px 100px;
+        grid-template-columns: 25% 37.5% 37.5%;
     }
 }
 
 @media(max-width:768px) {
     #wrap {
         width: 100%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-areas:
+            "header header"
+            "nav nav"
+            "aside section_a"
+            "aside section_b"
+            "footer footer"
+        ;
+        grid-template-rows: 100px 100px 520px 520px 100px;
+        grid-template-columns: 25% 75%;
     }
 }
 
 @media(max-width:480px) {
     #wrap {
+        width: 100%;
+        margin: 0 auto;
+        display: grid;
         grid-template-areas:
             "header header"
             "nav nav"
             "aside aside"
-            "section section"
+            "section_a section_a"
+            "section_b section_b"
+            "section_c section_c"
             "footer footer"
         ;
-        grid-template-rows: 100px 100px 300px 480px 100px;
+        grid-template-rows: 100px 100px 200px 430px 150px 100px;
+        grid-template-columns: 25% 75%;
     }
 }
 </code></pre>

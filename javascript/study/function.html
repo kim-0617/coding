@@ -34,6 +34,8 @@
                 <li><a href="if.html">조건문</a></li>
                 <li><a href="type.html">자료형</a></li>
                 <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">함수</a></li>
+                <li><a href="var.html">지역변수 / 전역변수</a></li>
             </ul>
         </nav>
     </header>
@@ -208,6 +210,78 @@ document.write(func());
                 </details>
             </div>
             <!-- 08 -->
+
+            <h3 class="t_tit2">09. 화살표 함수 : 익명함수 + 매개변수 + 리턴 값</h3>
+            <p class="t_desc">다음은 화살표 함수를 이용해서 매개변수와 리턴값 모두 있는 함수입니다.</p>
+            <div class="t_code">
+<pre><code class="language-js">const func = (str) => {
+    return str;
+}
+document.write(func("함수가 실행되었습니다. 9"));
+</code></pre>
+            </div>
+            <div class="t_result">
+                <details>
+                    <summary>결과 확인하기</summary>
+                    <div class="simple09">
+                        함수가 실행되었습니다. 9
+                    </div>
+                </details>
+            </div>
+            <!-- 09 -->
+
+            <h3 class="t_tit2">10. 화살표 함수 : 익명함수 + 매개변수 + 리턴 값 + 괄호 생략</h3>
+            <p class="t_desc">다음은 화살표 함수에서 매개변수 + 리턴값이 있는형태에서 매개변수의 괄호를 생략해보겠습니다.</p>
+            <div class="t_code">
+<pre><code class="language-js">const func = str => {
+    return str;
+}
+document.write(func("함수가 실행되었습니다. 10"));
+</code></pre>
+            </div>
+            <div class="t_result">
+                <details>
+                    <summary>결과 확인하기</summary>
+                    <div class="simple08">
+                        함수가 실행되었습니다. 10
+                    </div>
+                </details>
+            </div>
+            <!-- 10 -->
+
+            <h3 class="t_tit2">11. 화살표 함수 : 익명함수 + 매개변수 + 리턴 값 + 괄호 생략 + 리턴 생략</h3>
+            <p class="t_desc">화살표 함수는 매개변수 뿐 아니라 리턴문도 생략할 수 있습니다. (모두 한줄일 경우에만)p>
+            <div class="t_code">
+<pre><code class="language-js">const func = str => str;
+document.write(func("함수가 실행되었습니다. 11"));
+</code></pre>
+            </div>
+            <div class="t_result">
+                <details>
+                    <summary>결과 확인하기</summary>
+                    <div class="simple08">
+                        함수가 실행되었습니다. 11
+                    </div>
+                </details>
+            </div>
+            <!-- 11 -->
+
+            <h3 class="t_tit2">12. 화살표 함수 : 선언적 함수 + 매개변수 + 리턴 값 + 괄호 생략 + 리턴 생략</h3>
+            <p class="t_desc">다음은 선언적 함수에 여태까지 했던 형태를 적용해 보겠습니다.</p>
+            <div class="t_code">
+<pre><code class="language-js">func = str => str;
+document.write(func("함수가 실행되었습니다. 12"));
+</code></pre>
+            </div>
+            <div class="t_result">
+                <details>
+                    <summary>결과 확인하기</summary>
+                    <div class="simple08">
+                        함수가 실행되었습니다. 12
+                    </div>
+                </details>
+            </div>
+            <!-- 12 -->
         </div>
     </main>
     <!-- //main -->

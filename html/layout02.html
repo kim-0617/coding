@@ -11,8 +11,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="asset/css/dracula.css">
     <link rel="stylesheet" href="asset/css/style.css">
-    <link rel="stylesheet"
-      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/base16/solarized-light.min.css">
 </head>
 <body>
     <header id="header">
@@ -62,100 +60,115 @@
                 <div class="t_code">
 <pre><code class="language-css">* {
     margin: 0;
-}
-
-body {
+  }
+  
+  body {
     background-color: #E8F5E9;
-}
-
-#wrap {
+  }
+  
+  #wrap {
     width: 1200px;
     margin: 0 auto;
     /* 블록구조를 가운데 정렬 */
-}
-
-#header {
+  }
+  
+  #header {
     width: 100%;
     height: 100px;
     background-color: #C8E6C9;
     grid-area: header;
-}
-
-#nav {
+  }
+  
+  #nav {
     width: 100%;
     height: 100px;
     background-color: #A5D6A7;
     grid-area: nav;
-}
-
-#aside {
+  }
+  
+  #aside {
     width: 25%;
     height: 780px;
     background-color: #81C784;
     grid-area: aside;
     float: left;
-}
-
-#section {
+  }
+  
+  #section {
     width: 50%;
     height: 780px;
     background-color: #66BB6A;
     grid-area: section;
     float: left;
-}
-
-#article {
+  }
+  
+  #article {
     width: 25%;
     height: 780px;
     background-color: #4CAF50;
     float: left;
-}
-
-#footer {
+  }
+  
+  #footer {
     width: 100%;
     height: 100px;
     background-color: #43A047;
     grid-area: footer;
     clear: both;
-}
-
-@media(max-width : 1220px) {
+  }
+  
+  @media(max-width : 1220px) {
     #wrap {
-        width: 96%;
+      width: 96%;
     }
-}
-
-@media(max-width : 768px) {
+  }
+  
+  @media(max-width : 768px) {
     #wrap {
-        width: 100%;
+      width: 100%;
     }
-}
-
-@media(max-width : 480px) {
     #aside {
-        width: 100%;
-        height: 200px;
+      width: 45%;
+      height: 630px;
     }
-
+  
     #section {
-        width: 100%;
-        height: 430px;
+      width: 55%;
+      height: 630px;
     }
-
+  
     #article {
-        width: 100%;
-        height: 150px;
+      width: 100%;
+      height: 150px;
     }
-}
+  }
+  
+  @media(max-width : 480px) {
+    #aside {
+      width: 100%;
+      height: 200px;
+    }
+  
+    #section {
+      width: 100%;
+      height: 430px;
+    }
+  
+    #article {
+      width: 100%;
+      height: 150px;
+    }
+  }
 </code></pre>
                 </div>
                 <h4 class="t_tit3">결과</h4>
                 <div class="t_frame">
-                    <iframe height="800" style="width: 100%;" scrolling="no" title="Layout-float" src="https://codepen.io/kim-0617/embed/ZExJaaQ?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-                        See the Pen <a href="https://codepen.io/kim-0617/pen/ZExJaaQ">
+                    <p class="codepen" data-height="800" data-default-tab="result" data-slug-hash="ZExJaaQ" data-user="kim-0617" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                        <span>See the Pen <a href="https://codepen.io/kim-0617/pen/ZExJaaQ">
                         Layout-float</a> by kim-0617 (<a href="https://codepen.io/kim-0617">@kim-0617</a>)
-                        on <a href="https://codepen.io">CodePen</a>.
-                    </iframe>
+                        on <a href="https://codepen.io">CodePen</a>.</span>
+                    </p>
+                    <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
                 </div>
 
                 <h3 class="tit_2">02. flex를 이용한 레이아웃</h3>
@@ -224,6 +237,18 @@ body {
     #wrap{
         width: 100%;
     }
+    #section{
+        width: 60%;
+        height: 630px;
+    }
+    #aside{
+        width: 40%;
+        height: 630px;
+    }
+    #article{
+        width: 100%;
+        height: 150px;
+    }
 }
 @media (max-width : 480px){
     #section{
@@ -247,7 +272,7 @@ body {
                         See the Pen <a href="https://codepen.io/kim-0617/pen/RwMZjxB">
                         Layout - flex</a> by kim-0617 (<a href="https://codepen.io/kim-0617">@kim-0617</a>)
                         on <a href="https://codepen.io">CodePen</a>.
-                    </iframe>
+                      </iframe>
                 </div>
 
                 <h3 class="tit_2">03. grid를 이용한 레이아웃</h3>
@@ -317,6 +342,15 @@ body {
 @media(max-width : 768px) {
     #wrap{
         width: 100%;
+        grid-template-areas:
+        "header header"
+        "nav nav"
+        "aside section"
+        "article article"
+        "footer footer"
+    ;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 100px 100px 630px 150px 100px;
     }
 }
 
@@ -330,6 +364,7 @@ body {
         "article article article"
         "footer footer footer"
     ;
+    grid-template-columns: 25% 50% 25%;
     grid-template-rows: 100px 100px 200px 430px 150px 100px;
     }
 }
@@ -341,7 +376,7 @@ body {
                         See the Pen <a href="https://codepen.io/kim-0617/pen/abYyVYW">
                         Layout-grid</a> by kim-0617 (<a href="https://codepen.io/kim-0617">@kim-0617</a>)
                         on <a href="https://codepen.io">CodePen</a>.
-                    </iframe>
+                      </iframe>
                 </div>
             </div>
         </div>

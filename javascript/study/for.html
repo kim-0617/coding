@@ -34,6 +34,7 @@
                 <li><a href="if.html">조건문</a></li>
                 <li><a href="type.html">자료형</a></li>
                 <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수 / 전역변수</a></li>
             </ul>
         </nav>
     </header>
@@ -66,6 +67,25 @@
             <p class="t_desc">for문은 시작값, 조건문, 증감값을 일목요연하게 기입하여 반복문 안의 실행문을 실행한다. 가장 많이 사용하는 반복문</p>
             <p class="t_box">
                 for (초기값; 조건식; 증감값) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;실행문 <br>
+                } <br>
+            </p>
+
+            <h3 class="t_tit2">break문</h3>
+            <p class="t_desc">반목문에서 break 키워드가 등장하면, 그 즉시 반복문을 탈출한다.</p>
+            <p class="t_box">
+                for (초기값; 조건식; 증감값) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;실행문 <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;if(조건) break; //탈출<br>
+                } <br>
+            </p>
+
+            <h3 class="t_tit2">continue문</h3>
+            <p class="t_desc">반복문에서 continue 키워드가 등장하면, 그 밑부분을 건너뛰고 다음반복으로 넘어간다.</p>
+            <p class="t_box">
+                for (초기값; 조건식; 증감값) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;실행문 <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;if(조건) continue; // 밑부분 스킵<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;실행문 <br>
                 } <br>
             </p>
@@ -254,6 +274,54 @@ document.write(table);
                     
                     document.querySelector('.result03').innerHTML = table;
                 </script>
+            </div>
+
+            <h3 class="t_tit2">break문</h3>
+            <p class="t_desc">break문을 이용해서 10까지만 출력할 수 있습니다.</p>
+            <div class="t_code">
+<pre><code class="language-js">for(let i = 1; i &lt;= 20; i++){
+    document.write(i);
+    if(i === 10) break; // 10까지만 출력하고 반복문 탈출
+}
+</code></pre>
+            </div>
+            <div class="t_result">
+                <details>
+                    <summary>결과 확인하기</summary>
+                    <div class="result04">
+                        <script>
+                            let result04 = document.querySelector('.result04');
+                            for(let i = 1; i<=20; i++){
+                                result04.innerHTML += i + "<br>";
+                                if(i === 10) break;
+                            }
+                        </script>
+                    </div>
+                </details>
+            </div>
+
+            <h3 class="t_tit2">continue문</h3>
+            <p class="t_desc">continue문을 이용해서 10은 건너뛰고 20까지 출력해 보겠습니다.</p>
+            <div class="t_code">
+<pre><code class="language-js">for(let i = 1; i &lt;= 20; i++){
+    if(i === 10) continue; // 10은 건너뛴다. (밑에는 스킵된다.)
+    document.write(i);
+}
+</code></pre>
+            </div>
+            <div class="t_result">
+                <details>
+                    <summary>결과 확인하기</summary>
+                    <div class="result05">
+                        <script>
+                            let result05 = document.querySelector('.result05');
+                            for(let i = 1; i<=20; i++){
+                                if(i === 10) continue;
+                                result05.innerHTML += i + "<br>"
+                            }
+                        </script>
+                    </div>
+                </details>
             </div>
       
         </div>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,84 +8,152 @@
     <title>Layout</title>
 
     <style>
-        *{margin: 0;}
-        body{background-color: #E1F5FE;}
-        #wrap{
+        * {
+            margin: 0;
+        }
+
+        body {
+            background-color: #E1F5FE;
+        }
+
+        #wrap {
             width: 1200px;
             margin: 0 auto;
             display: flex;
             flex-wrap: wrap;
         }
-        #header{
+
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+            width: 75%;
+        }
+        #header {
             width: 100%;
             height: 100px;
             background-color: #B3E5FC;
         }
-        #nav{
+
+        #nav {
             width: 100%;
             height: 100px;
             background-color: #81D4FA;
         }
-        #aside{
-            width: 30%;
+
+        #aside {
+            width: 25%;
             height: 780px;
             background-color: #4FC3F7;
         }
-        #section{
-            width: 70%;
-            height: 780px;
-        }
-        #section #a{
+
+        #section_a {
+            width: 100%;
             background-color: #29B6F6;
-            height: 33.33%;
+            height: 260px;
         }
-        #section #b{
+
+        #section_b {
+            width: 100%;
             background-color: #03A9F4;
-            height: 33.33%;
+            height: 260px;
         }
-        #section #c{
+
+        #section_c {
+            width: 100%;
             background-color: #039BE5;
-            height: 33.33%;
+            height: 260px;
         }
-        #footer{
+
+        #footer {
             width: 100%;
             height: 100px;
             background-color: #0288D1;
         }
 
-        @media(max-width:1220px){
-            #wrap{
+        @media(max-width:1220px) {
+            #wrap {
                 width: 96%;
             }
-        }
-        @media(max-width:768px){
-            #wrap{
-                width: 100%;
+
+            #section_a {
+                height: 260px;
+            }
+
+            #section_b {
+                width: 50%;
+                height: 520px;
+            }
+
+            #section_c {
+                width: 50%;
+                height: 520px;
             }
         }
-        @media(max-width:480px){
-            #aside{
+
+        @media(max-width:768px) {
+            #wrap {
+                width: 100%;
+            }
+
+            #aside {
+                width: 25%;
+            }
+
+            #section_a {
+                width: 100%;
+                height: 390px;
+            }
+
+            #section_b {
+                width: 100%;
+                height: 390px;
+            }
+
+            #section_c {
+                display: none;
+            }
+        }
+
+        @media(max-width:480px) {
+            #aside {
                 width: 100%;
                 height: 300px;
             }
-            #section{
+            .container{
                 width: 100%;
-                height: 480px;
+            }
+
+            #section_a {
+                width: 100%;
+                height: 200px;
+            }
+
+            #section_b {
+                width: 100%;
+                height: 430px;
+            }
+
+            #section_c {
+                display: block;
+                width: 100%;
+                height: 150px;
             }
         }
     </style>
 </head>
+
 <body>
     <div id="wrap">
-        <header id="header"></header>
-        <nav id="nav"></nav>
-        <aside id="aside"></aside>
-        <section id="section">
-            <div id="a"></div>
-            <div id="b"></div>
-            <div id="c"></div>
-        </section>
-        <footer id="footer"></footer>
+        <div id="header"></div>
+        <div id="nav"></div>
+        <div id="aside"></div>
+        <div class="container">
+            <div id="section_a"></div>
+            <div id="section_b"></div>
+            <div id="section_c"></div>
+        </div>
+        <div id="footer"></div>
     </div>
 </body>
+
 </html>

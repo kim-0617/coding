@@ -75,6 +75,15 @@
         @media(max-width : 768px) {
             #wrap{
                 width: 100%;
+                grid-template-areas:
+                "header header"
+                "nav nav"
+                "aside section"
+                "article article"
+                "footer footer"
+            ;
+            grid-template-columns: 40% 60%;
+            grid-template-rows: 100px 100px 630px 150px 100px;
             }
         }
 
@@ -88,6 +97,7 @@
                 "article article article"
                 "footer footer footer"
             ;
+            grid-template-columns: 25% 50% 25%;
             grid-template-rows: 100px 100px 200px 430px 150px 100px;
             }
         }

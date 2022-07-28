@@ -462,7 +462,17 @@
             border-radius: 50%;
         }
 
+        @media(max-height) {
+            main::before {
+                display: none;
+            }
+        }
+
         @media(max-width : 800px) {
+            main {
+                min-height: 700px;
+            }
+
             h1 {
                 font-size: 40px;
             }

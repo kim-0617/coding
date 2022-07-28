@@ -36,6 +36,7 @@
                 <li><a href="study/if.html">조건문</a></li>
                 <li><a href="study/type.html">자료형</a></li>
                 <li><a href="study/function.html">함수</a></li>
+                <li><a href="study/var.html">지역변수 / 전역변수</a></li>
             </ul>
         </nav>
     </header>
@@ -309,7 +310,7 @@ for(let i = 0; i &lt; num.length; i++){
             <!-- // sample9 -->
 
             <div id="sample10" class="sample">
-                <h3>10. for문 : 반복문</h3>
+                <h3>10. for문 : 중첩 반복문</h3>
                 <p>for문 안에 다시 for문을 넣어서 이용하면, 좀 더 다양한 조건에 맞춰 반복을 할 수 있습니다.</p>
                 <div class="script">
                     <pre><code class="lanauage-js">for(let i = 1; i <= 2; i++){
@@ -336,6 +337,60 @@ for(let i = 0; i &lt; num.length; i++){
                 </div>
             </div>
             <!-- // sample10 -->
+
+            <div id="sample11" class="sample">
+                <h3>11. 반복문 : break문</h3>
+                <p>반복문을 실행할 때, 특정 조건에 맞는다면 break문으로 반복문을 탈출할 수 있습니다.</p>
+                <div class="script">
+<pre><code class="lanauage-js">for(let i = 1; i &lt;= 20; i++){
+    document.write(i);
+    if(i === 10) break; // 10까지만 출력하고 반복문 탈출
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample11_result">
+                            <script>
+                                let result11 = document.querySelector('.sample11_result');
+                                for(let i = 1; i <= 20; i++){
+                                    result11.innerHTML += i + "<br>";
+                                    if(i === 10) break;
+                                }
+                            </script>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- // sample11 -->
+
+            <div id="sample12" class="sample">
+                <h3>12. 반복문 : continue문</h3>
+                <p>우리가 반복문을 실행할 때, 특정 조건에 맞는다면 continue문을 이용해서 현재 차례를 건너뛸 수 있습니다.</p>
+                <div class="script">
+<pre><code class="lanauage-js">for(let i = 1; i &lt;= 20; i++){
+    if(i === 10) continue; // 10은 건너뛴다. (밑에는 스킵된다.)
+    document.write(i);
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample12_result">
+                            <script>
+                                let result12 = document.querySelector('.sample12_result');
+                                for(let i = 1; i <= 20; i++){
+                                    if(i === 10) continue
+                                    result12.innerHTML += i + "<br>";
+                                }
+                            </script>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- // sample12 -->
 
         </div>
         <div class="main_desc"></div>
@@ -489,6 +544,28 @@ for(let i = 0; i &lt; num.length; i++){
                 for(let j = 1; j <= 5; j++){
                     // document.write(`${i}*${j}=${i*j}`);
                 }
+            }
+        }
+
+        // 11. break문
+        {
+            // let i = 1;
+            // while(i <= 20){
+            //     document.write(i);
+            //     i++;
+            // }
+
+            for(let i = 1; i <= 20; i++){
+                // document.write(i);
+                if(i === 10) break;
+            }
+        }
+
+        // 12. continue문
+        {
+            for(let i = 1; i <= 20; i++){
+                if(i === 10) continue;
+                // document.write(i);
             }
         }
     </script>

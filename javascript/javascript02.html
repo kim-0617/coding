@@ -36,6 +36,7 @@
                 <li><a href="study/if.html">조건문</a></li>
                 <li><a href="study/type.html">자료형</a></li>
                 <li><a href="study/function.html">함수</a></li>
+                <li><a href="study/var.html">지역변수 / 전역변수</a></li>
             </ul>
         </nav>
     </header>
@@ -723,6 +724,26 @@ arr.map(function (el, index, array) {
             });
         }
 
+        // 11. 
+        {
+            const arr = [1,2,3,4,5,6,7,8,9];
+
+            for(let i = 0; i < arr.length; i++){
+                document.write(arr[i]);
+            }
+            arr.forEach((el)=>{
+                document.write(el);
+            });
+            document.write(arr.map((el)=>{
+                return el;
+            }));
+            for(let i in arr){
+                document.write(arr[i]);
+            }
+            for(let i of arr){
+                document.write(i);
+            }
+        }
     </script>
 </body>
 
