@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js함수</title>
+</head>
+<body>
+    
+    <script>
+        // 01. 선언적 함수
+        {
+            function func(){
+               document.write("함수가 실행되었습니다. 1 <br>");
+            }
+            func();
+        }
+
+        // 02. 익명 함수
+        {
+            func = function(){
+                document.write("함수가 실행되었습니다. 2<br>");
+            }
+            func();
+        }
+
+        // 03. 매개변수 함수
+        {
+            let str = "함수가 실행되었습니다. 3<br>"
+            function func(str){
+               document.write(str);
+            }
+            func(str);
+        }
+
+        // 04. 리턴값 함수
+        {
+            function func(){
+               return "함수가 실행되었습니다. 4<br>";
+            }
+
+            document.write(func());
+        }
+
+        // 05. 화살표 함수 - 선언적 함수
+        {
+            (()=>document.write("함수가 실행되었습니다. 5<br>"))();
+        }
+
+        // 06. 화살표 함수 - 익명함수
+        {
+            func = () => document.write("함수가 실행되었습니다. 6<br>");
+            func();
+        }
+
+        // 07. 화살표 함수 - 매개변수 함수
+        {
+            let str = "함수가 실행되었습니다. 7<br>";
+
+            const func = str => {
+                document.write(str);
+            }     
+            func(str);
+        }
+
+        // 08. 화살표 함수 - 리턴값 함수
+        {
+            const func = () => document.write("함수가 실행되었습니다. 8<br>");
+            func();
+        }
+    </script>
+</body>
+</html>
