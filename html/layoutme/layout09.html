@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 레퍼런스 북</title>
+    <!-- 구글 아이콘 -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="asset/css/dracula.css">
+    <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/base16/solarized-light.min.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
+        <span>이름 : 김성현</span>
+    </header>
+    <!-- // header -->
+
+    <main id="main">
+        <header class="main_header">
+            <h2>HTML <em>레퍼런스 북</em></h2>
+        </header>
+        <nav class="main_menu">
+            <ul>
+                <li><a href="alphabet.html">알파벳</a></li>
+                <li><a href="basic.html">기초문법</a></li>
+                <li><a href="block.html">블록구조 / 인라인구조</a></li>
+                <li><a href="web.html">웹표준 / 웹접근성 / 웹호환성</a></li>
+                <li><a href="semantic.html">시멘틱 태그</a></li>
+                <li><a href="seo.html">검색엔진시스템(SEO)</a></li>
+            </ul>
+            <ul>
+                <li><a href="layout01.html">레이아웃01</a></li>
+                <li><a href="layout02.html">레이아웃02</a></li>
+                <li><a href="layout03.html">레이아웃03</a></li>
+                <li class="active"><a href="layout04.html">레이아웃04</a></li>
+                <li><a href="layout05.html">레이아웃05</a></li>
+            </ul>
+        </nav>
+        <div class="main_refer">
+            <div class="document">
+                <h2 class="t_tit">레이아웃09</h2>
+                <p class="t_desc">
+                    레이아웃 9번 입니다. 크게는 4부분으로 나뉘어져 있고, 이번 레이아웃 역시 전체영역이 있는 레이아웃 입니다.
+                    일단 굉장히 나뉘지는 구역이 많고, 하나 깨달은 바가 있다면 위아래 칸만큼 블락을 만들고, 하나의 블락안에서 또 양옆으로 나눠지는 요소들은 자식요소로 배치하면 만들어진다는 것입니다.
+                    <br>사진은 밑에서 봐주세요
+                </p>
+
+                <h3 class="tit_2">float을 이용한 레이아웃</h3>
+                <p class="t_desc2">
+                    위아래로 나뉜다면 container 클래스의 자식요소로 준 뒤, height 값으로 적절히 배치합니다. 양옆으로 나뉘는 것은 float을 통해 배치합니다.
+                    여기서 container 클래스에 overflow : hidden 속성을 주었으니 그 하위에 있는 모든 요소들에 대해서 float을 사용해도 레이아웃이 깨지지 않습니다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-css">}*{
+    margin: 0;
+    padding: 0;
+}
+#wrap {
+    width: 100%;
+}
+
+#header {
+    width: 100%;
+    height: 200px;
+    background-color: #444;
+}
+
+#banner {
+    width: 100%;
+    height: 500px;
+    background-color: #111;
+}
+
+#ad {
+    width: 100%;
+    height: 500px;
+    background-color: #222;
+}
+
+#footer {
+    width: 100%;
+    height: 100px;
+    background-color: #333;
+}
+
+.container{
+    width: 1200px;
+    margin: 0 auto;
+    height: inherit;
+    overflow: hidden;
+    background-color: rgba(255,255,255,0.4);
+    text-align: center;
+    font-size: 30px;
+}
+
+.container .h1{
+    width: 45%;
+    height: 200px;
+    background-color: blue;
+    float: left;
+    line-height: 200px;
+}
+.container .h2{
+    width: 55%;
+    height: 200px;
+    float: left;
+    line-height: 100px;
+}
+.container .h2 .h21{
+    background-color: skyblue;
+    height: 50%;
+}
+.container .h2 .h22{
+    background-color: green;
+    height: 50%;
+}
+
+.container .top1 {
+    height: 125px;
+    line-height: 125px;
+}
+.container .top1 .t11{
+    width: 50%;
+    float: left;
+    height: 125px;
+    background-color: rgb(212, 166, 166);
+}
+.container .top1 .t12{
+    width: 50%;
+    float: left;
+    height: 125px;
+    background-color: #fff;
+}
+
+.container .top2 {
+    height: 125px;
+    line-height: 125px;
+}
+.container .top2 .t21{
+    width: 50%;
+    float: left;
+    height: 125px;
+    background-color: #fff;
+}
+.container .top2 .t22{
+    width: 50%;
+    float: left;
+    height: 125px;
+    background-color: rgb(212, 166, 166);
+}
+
+.container .mid {
+    height: 187.5px;
+    line-height: 62.5px;
+}
+.container .mid .m1{
+    width: 100%;
+    height: 62.5px;
+    background-color: rgb(60, 197, 101);
+}
+.container .mid .m2{
+    width: 100%;
+    height: 62.5px;
+    background-color: rgb(176, 254, 199);
+}
+.container .mid .m3{
+    width: 100%;
+    height: 62.5px;
+    background-color: rgb(10, 88, 33);
+}
+
+.container .bottom{
+    height: 62.5px;
+    line-height: 62.5px;
+}
+.container .bottom .b1{
+    width: 600px;
+    height: inherit;
+    background-color: rgb(204, 162, 34);
+    float: left;
+}
+.container .bottom .b2{
+    width: 600px;
+    height: inherit;
+    background-color: rgb(214, 191, 121);
+    float: left;
+}
+
+.container .ad_top{
+    height: 250px;
+    line-height: 250px;
+}
+.container .ad_bot{
+    height: 250px;
+    line-height: 250px;
+}
+.container .ad_top .ad1{
+    width: 200px;
+    height: 250px;
+    float: left;
+    background-color: rgb(246, 160, 222);
+}
+.container .ad_top .ad2{
+    width: 200px;
+    height: 250px;
+    float: left;
+    background-color: rgb(88, 26, 71);
+}
+.container .ad_top .ad3{
+    width: 200px;
+    height: 250px;
+    float: left;
+    background-color: rgb(247, 120, 211);
+}
+.container .ad_top .ad4{
+    width: 200px;
+    height: 250px;
+    float: left;
+    background-color: rgb(250, 8, 181);
+}
+.container .ad_top .ad5{
+    width: 200px;
+    height: 250px;
+    float: left;
+    background-color: rgb(155, 110, 142);
+}
+.container .ad_top .ad6{
+    width: 200px;
+    height: 250px;
+    float: left;
+    background-color: rgb(91, 29, 74);
+}
+
+.container .ad_bot .ad_bot1{
+    width: 50%;
+    height: inherit;
+    float: left;
+    background-color: #555;
+}
+.container .ad_bot .ad_bot2{
+    width: 50%;
+    height: inherit;
+    float: left;
+    background-color: #999;
+}
+</code></pre>
+                </div>
+
+                <h4 class="t_tit3">결과</h4>
+                <p class="codepen" data-zoom = 0.5 data-height="700" data-default-tab="result" data-slug-hash="mdxqBGP" data-user="kim-0617" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                    <span>See the Pen <a href="https://codepen.io/kim-0617/pen/mdxqBGP">
+                    Layout09</a> by kim-0617 (<a href="https://codepen.io/kim-0617">@kim-0617</a>)
+                    on <a href="https://codepen.io">CodePen</a>.</span>
+                </p>
+                <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+            </div>
+        </div>
+    </main>
+    <!-- // main -->
+
+    <footer id="footer">
+        <a href="mailto:kkk5993@naver.com">kkk5993@naver.com</a>
+    </footer>
+    <!-- // footer -->
+    <script src="asset/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+
+</html>

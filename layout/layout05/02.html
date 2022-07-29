@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout05 - float</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        #wrap {
+            width: 100%;
+        }
+
+        #header {
+            width: 100%;
+            height: 100px;
+            background-color: #EEEBE9;
+        }
+
+        #banner {
+            width: 100%;
+            height: 100px;
+            background-color: #B9AAA5;
+        }
+
+        #section {
+            width: 100%;
+            height: 780px;
+            background-color: #886F65;
+        }
+
+        #footer {
+            width: 100%;
+            height: 100px;
+            background-color: #4E342E;
+        }
+
+        .container{
+            width: 1200px;
+            height: inherit;
+            margin: 0 auto;
+            background-color: rgba(255,255,255,0.3);
+            overflow: hidden;
+        } 
+
+        .container .header{
+            height: inherit;
+            background-color: #D5CCC9;
+        }
+
+        .container .banner{
+            height: inherit;
+            background-color: #9D8980;
+        }
+
+        .container .footer{
+            height: inherit;
+            background-color: #3E2723;
+        }
+
+        .container .cont1{
+            height: 100px;
+            background-color: #74574A;
+        }
+        .container .cont2{
+            height: 200px;
+            background-color: #684D43;
+        }
+        .container .cont3{
+            width: 50%;
+            height: 480px;
+            float: left;
+            background-color: #594139;
+        }
+        .container .cont4{
+            width: 50%;
+            height: 480px;
+            float: left;
+            background-color: #4A352F;
+        }
+
+        /* float으로 인한 영역깨짐 방지법
+            1. 깨지는 영역에 clear:both를 설정한다.
+            2. 부모 박스 영역에 overflow : hidden을 설정한다.
+            3. clearfix를 설정한다.
+        */
+        .clearfix::before,
+        .clearfix::after{
+            content : '';
+            line-height: 0;
+        }
+        .clearfix::after{
+            clear: both;
+        }
+
+        @media(max-width : 1220px){
+            .container{
+                width: 96%;
+                overflow: hidden;
+            }
+            .container .cont1{
+                width: 30%;
+                height: 780px;
+                float: left;
+            }
+            .container .cont2{
+                width: 70%;
+                height: 390px;
+                float: left;
+            }
+            .container .cont3{
+                width: 35%;
+                height: 390px;
+                float: left;
+            }
+            .container .cont4{
+                width: 35%;
+                height: 390px;
+                float: left;
+            }
+        }
+        @media(max-width : 768px){
+            .container{
+                width: 100%;
+            }
+            .contents .cont1{
+                width: 40%;
+                height: 780px;
+                background-color: #74574A;
+                float: left;
+            }
+            .contents .cont2{
+                width: 60%;
+                height: 33.33%;
+                background-color: #684D43;
+            }
+            .contents .cont3{
+                width: 60%;
+                height: 33.33%;
+                background-color: #594139;
+            }
+            .contents .cont4{
+                width: 60%;
+                height: 33.33%;
+                background-color: #4A352F;
+            }
+        }
+        @media(max-width : 480px){
+            .contents .cont1{
+                width: 100%;
+                height: 150px;
+            }
+            .contents .cont2{
+                width: 100%;
+                height: 210px;
+            }
+            .contents .cont3{
+                width: 100%;
+                height: 210px;
+            }
+            .contents .cont4{
+                width: 100%;
+                height: 210px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="container">
+                <div class="header"></div>
+            </div>
+        </div>
+        <div id="banner">
+            <div class="container">
+                <div class="banner"></div>
+            </div>
+        </div>
+        <div id="section">
+            <div class="contents container">
+                <div class="cont1 clearfix"></div>
+                <div class="cont2 clearfix"></div>
+                <div class="cont3 clearfix"></div>
+                <div class="cont4 clearfix"></div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="container">
+                <div class="footer"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

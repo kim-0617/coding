@@ -38,145 +38,528 @@
                 <li><a href="layout01.html">레이아웃01</a></li>
                 <li><a href="layout02.html">레이아웃02</a></li>
                 <li><a href="layout03.html">레이아웃03</a></li>
-                <li class="active"><a href="layout04.html">레이아웃04</a></li>
-                <li><a href="layout05.html">레이아웃05</a></li>
+                <li><a href="layout04.html">레이아웃04</a></li>
+                <li class="active"><a href="layout05.html">레이아웃05</a></li>
             </ul>
         </nav>
         <div class="main_refer">
             <div class="document">
                 <h2 class="t_tit">레이아웃05</h2>
                 <p class="t_desc">
-                    레이아웃 5번으로 돌아왔습니다. 이런 레이아웃은 웹디자인 기능사에서도 출제가 되는 디자인입니다.
-                    헤더영역(2부분) / 광고배너영역 / 섹션영역(3부분) / 푸터영역(3부분) 로 구성되는 레이아웃 입니다.
+                    레이아웃 5번으로 돌아왔습니다. 이번 레이아웃 역시 전체영역이 들어간 페이지에 container클래스를 가운데 정렬하여 레이아웃을 구성했습니다.
+                    각 기기마다 section 부분의 레이아웃 방식이 달라지니 집중해서 봐주세요.
                 </p>
                 <div class="t_frame">
-                    <iframe width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FKvRmoGfc3g9ul7Lnj1feKo%2F%25EB%25A0%2588%25EC%259D%25B4%25EC%2595%2584%25EC%259B%2583%3Fnode-id%3D186%253A2" allowfullscreen></iframe>
+                    <iframe width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FKvRmoGfc3g9ul7Lnj1feKo%2F%25EB%25A0%2588%25EC%259D%25B4%25EC%2595%2584%25EC%259B%2583%3Fnode-id%3D728%253A2" allowfullscreen></iframe>
                 </div>
 
                 <h3 class="tit_2">float을 이용한 레이아웃</h3>
                 <p class="t_desc2">
-                    3부분으로 나뉘는 부분에 float 속성을 부여합니다. 그리고 부모요소에 overflow : hidden 속성을 주면 레이아웃을 깔끔히 배치할 수 있습니다.
-                    텍스트 정렬은 text-align : center 속성과 line-height : 요소의 높이 만큼 주면 간단히 정렬할 수 있습니다.
+                    float을 적용하기에 앞서 float으로 인한 영역깨짐 방지법을 알아보겠습니다. <br>
+                    /* float으로 인한 영역깨짐 방지법 <br>
+                    1. 깨지는 영역에 clear:both를 설정한다. <br>
+                    2. 부모 박스 영역에 overflow : hidden을 설정한다. <br>
+                    3. clearfix를 설정한다. <br>
+                    */ <br>
+                    1번 방법은 깨지는 영역을 눈으로 확인할 수 있어야 적용할 수 있습니다. <br>
+                    2번 방법은 육안상으로는 잘 정렬된 것 처럼 보이지만, 영역 밖에서 안으로 들어오는 애니메이션 효과 같은게 있을 때 제대로 표시되지 않을 수 있습니다. <br>
+                    3번 방법이 가장 깔끔한 방법입니다. clearfix클래스를 적용해서 가상요소 앞뒤로 속성을 적용해 주고 float을 적용한 요소에 clearfix 클래스를 부여하면 됩니다.
                 </p>
                 <div class="t_code">
-<pre><code class="language-css">*{
+<pre><code class="language-css">* {
     margin: 0;
-    padding: 0;
-    font-size: 30px;
 }
-#wrap{
+
+#wrap {
+    width: 100%;
+}
+
+#header {
+    width: 100%;
+    height: 100px;
+    background-color: #EEEBE9;
+}
+
+#banner {
+    width: 100%;
+    height: 100px;
+    background-color: #B9AAA5;
+}
+
+#section {
+    width: 100%;
+    height: 780px;
+    background-color: #886F65;
+}
+
+#footer {
+    width: 100%;
+    height: 100px;
+    background-color: #4E342E;
+}
+
+.container{
     width: 1200px;
+    height: inherit;
     margin: 0 auto;
-}
-#header{
-    width: 1200px;
-    height: 100px;
-    background-color: #888;
+    background-color: rgba(255,255,255,0.3);
     overflow: hidden;
-    text-align: center;
-    /* 글씨가 한줄일 때 line-height와 height를 같게 */
-    line-height: 100px;  
+} 
+
+.container .header{
+    height: inherit;
+    background-color: #D5CCC9;
 }
-#header .logo{
-    width: 300px;
+
+.container .banner{
+    height: inherit;
+    background-color: #9D8980;
+}
+
+.container .footer{
+    height: inherit;
+    background-color: #3E2723;
+}
+
+.container .cont1{
     height: 100px;
-    background-color: #222;
+    background-color: #74574A;
+}
+.container .cont2{
+    height: 200px;
+    background-color: #684D43;
+}
+.container .cont3{
+    width: 50%;
+    height: 480px;
     float: left;
-    color: #fff;
+    background-color: #594139;
 }
-#header .menu{
-    width : 900px;
-    height : 100px;
-    background-color: #333;
+.container .cont4{
+    width: 50%;
+    height: 480px;
     float: left;
-    color: #fff;
+    background-color: #4A352F;
 }
-#banner{
-    width: 1200px;
-    height: 400px;
-    background-color: #666;
-    color: #fff;
-    text-align: center;
-    line-height: 400px;
+
+/* float으로 인한 영역깨짐 방지법
+    1. 깨지는 영역에 clear:both를 설정한다.
+    2. 부모 박스 영역에 overflow : hidden을 설정한다.
+    3. clearfix를 설정한다.
+*/
+.clearfix::before,
+.clearfix::after{
+    content : '';
+    line-height: 0;
 }
-#section{
-    width: 1200px;
-    height: 300px;
-    background-color: #333;
-    overflow: hidden;
+.clearfix::after{
+    clear: both;
 }
-#section .box1{
-    width: 400px;
-    height: 300px;
-    background-color: #777;
-    float: left;
-    text-align: center;
-    line-height: 300px;
-    color: #fff;
+
+@media(max-width : 1220px){
+    .container{
+        width: 96%;
+        overflow: hidden;
+    }
+    .container .cont1{
+        width: 30%;
+        height: 780px;
+        float: left;
+    }
+    .container .cont2{
+        width: 70%;
+        height: 390px;
+        float: left;
+    }
+    .container .cont3{
+        width: 35%;
+        height: 390px;
+        float: left;
+    }
+    .container .cont4{
+        width: 35%;
+        height: 390px;
+        float: left;
+    }
 }
-#section .box2{
-    width: 400px;
-    height: 300px;
-    background-color: #888;
-    float: left;
-    text-align: center;
-    line-height: 300px;
-    color: #fff;
+@media(max-width : 768px){
+    .container{
+        width: 100%;
+    }
+    .contents .cont1{
+        width: 40%;
+        height: 780px;
+        background-color: #74574A;
+        float: left;
+    }
+    .contents .cont2{
+        width: 60%;
+        height: 33.33%;
+        background-color: #684D43;
+    }
+    .contents .cont3{
+        width: 60%;
+        height: 33.33%;
+        background-color: #594139;
+    }
+    .contents .cont4{
+        width: 60%;
+        height: 33.33%;
+        background-color: #4A352F;
+    }
 }
-#section .box3{
-    width: 400px;
-    height: 300px;
-    background-color: #999;
-    float: left;
-    text-align: center;
-    line-height: 300px;
-    color: #fff;
-}
-#footer{
-    width: 1200px;
-    height: 100px;
-    background-color: #555;
-    overflow: hidden;
-}
-#footer .footer1{
-    width: 200px;
-    height: 100px;
-    float: left;
-    color: #fff;
-    text-align: center;
-    line-height: 100px;
-    background-color: #444;
-}
-#footer .footer2{
-    width: 800px;
-    height: 100px;
-    float: left;
-    color: #fff;
-    text-align: center;
-    line-height: 100px;
-    background-color: #333;
-}
-#footer .footer3{
-    width: 200px;
-    height: 100px;
-    float: left;
-    color: #fff;
-    text-align: center;
-    line-height: 100px;
-    background-color: #222;
+@media(max-width : 480px){
+    .contents .cont1{
+        width: 100%;
+        height: 150px;
+    }
+    .contents .cont2{
+        width: 100%;
+        height: 210px;
+    }
+    .contents .cont3{
+        width: 100%;
+        height: 210px;
+    }
+    .contents .cont4{
+        width: 100%;
+        height: 210px;
+    }
 }
 </code></pre>
                 </div>
 
                 <h4 class="t_tit3">결과</h4>
-                <div class="t_frame">
-                    <p class="codepen" data-height="300" data-default-tab="result" data-slug-hash="ExEbjBq" data-editable="true" data-user="kim-0617" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-                        <span>See the Pen <a href="https://codepen.io/kim-0617/pen/ExEbjBq">
-                        Layout05</a> by kim-0617 (<a href="https://codepen.io/kim-0617">@kim-0617</a>)
-                        on <a href="https://codepen.io">CodePen</a>.</span>
-                    </p>
-                    <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+                <p class="codepen" data-zoom = 0.5 data-height="800" data-default-tab="result" data-slug-hash="eYMeyBd" data-user="kim-0617" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                    <span>See the Pen <a href="https://codepen.io/kim-0617/pen/eYMeyBd">
+                    Layout05-float</a> by kim-0617 (<a href="https://codepen.io/kim-0617">@kim-0617</a>)
+                    on <a href="https://codepen.io">CodePen</a>.</span>
+                </p>
+                <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+                <hr>
+                <h3 style="margin-top : 40px" class="tit_2">flex을 이용한 레이아웃</h3>
+                <p class="t_desc2">
+                    flex를 이용한 레이아웃 방법입니다. <br>
+                    flex를 적용하기 위해 float와는 조금다른 html구조를 사용했습니다. float처럼 형제요소 4개를 쭉 배치하면 반응형작업을 해줄 때 애로사항이 있기 때문이죠.
+                    그래서 left섹션과 right섹션을 나누고 그안에 컨텐츠를 적절히 배치하였습니다. <br>
+                    flex는 간단합니다. flex는 자신의 자식요소에 적용할 수 있기 때문에, 부모에 display : flex를 주고 flex-wrap : wrap을 이용해 레이아웃을 배치해줍니다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-css"> * {
+    margin: 0;
+    padding: 0;
+}
+
+#wrap {}
+
+#header {
+    height: 100px;
+    background-color: #EEEBE9;
+}
+
+#nav {
+    height: 100px;
+    background-color: #B9AAA5;
+}
+
+#main {
+    height: 780px;
+    background-color: #886F65;
+}
+
+#footer {
+    height: 100px;
+    background-color: #4E342E;
+}
+
+.container {
+    width: 1200px;
+    height: inherit;
+    background-color: rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
+}
+
+.contents .left {}
+
+.contents .left .cont1 {
+    width: 100%;
+    height: 100px;
+    background-color: #74574A;
+}
+
+.contents .right {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contents .right .cont2 {
+    width: 100%;
+    height: 200px;
+    background-color: #684D43;
+}
+
+.contents .right .cont3 {
+    width: 50%;
+    height: 480px;
+    background-color: #594139;
+}
+
+.contents .right .cont4 {
+    width: 50%;
+    height: 480px;
+    background-color: #4A352F;
+}
+
+/* 미디어 쿼리 */
+@media(max-width : 1220px) {
+    .container {
+        width: 96%;
+    }
+
+    .contents {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .contents .left {
+        width: 30%;
+    }
+
+    .contents .left .cont1 {
+        width: 100%;
+        height: 780px;
+        background-color: #74574A;
+    }
+
+    .contents .right {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        height: 780px;
+    }
+
+    .contents .right .cont2 {
+        width: 100%;
+        height: 390px;
+    }
+
+    .contents .right .cont3 {
+        width: 50%;
+        height: 390px;
+    }
+
+    .contents .right .cont4 {
+        width: 50%;
+        height: 390px;
+    }
+}
+
+@media(max-width : 768px) {
+    .container {
+        width: 100%;
+    }
+
+    .contents .right .cont2 {
+        width: 100%;
+        height: 260px;
+    }
+
+    .contents .right .cont3 {
+        width: 100%;
+        height: 260px;
+    }
+
+    .contents .right .cont4 {
+        width: 100%;
+        height: 260px;
+    }
+}
+
+@media(max-width : 480px) {
+    .contents {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .contents .left {
+        width: 100%;
+        height: 150px;
+    }
+
+    .contents .right {
+        width: 100%;
+        height: 630px;
+    }
+
+    .contents .left .cont1 {
+        height: 150px;
+    }
+
+    .contents .right .cont2 {
+        width: 100%;
+        height: 210px;
+    }
+
+    .contents .right .cont3 {
+        width: 100%;
+        height: 210px;
+    }
+
+    .contents .right .cont4 {
+        width: 100%;
+        height: 210px;
+    }
+}
+</code></pre>
                 </div>
+
+                <h4 class="t_tit3">결과</h4>
+                <p class="codepen" data-zoom = 0.5  data-height="800" data-default-tab="result" data-slug-hash="MWVOrQb" data-user="kim-0617" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                    <span>See the Pen <a href="https://codepen.io/kim-0617/pen/MWVOrQb">
+                    Layout - flex</a> by kim-0617 (<a href="https://codepen.io/kim-0617">@kim-0617</a>)
+                    on <a href="https://codepen.io">CodePen</a>.</span>
+                </p>
+                <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+                <h3 style="margin-top : 40px" class="tit_2">grid를 이용한 레이아웃</h3>
+                <p class="t_desc2">
+                    grid를 이용한 레이아웃 방법입니다. <br>
+                    grid는 2차원 레이아웃 형태를 구성하기에 좋은 방법입니다. <br>
+                    grid는 flex와 마찬가지로 부모요소가 자식요소의 모든걸 컨트롤 합니다.
+                    따라서 레이아웃에 따라 적절한 넓이와 높이값을 지정하고, 테이블이라 생각하고
+                    레이아웃을 구성하면 깔끔하게 레이아웃이 구성됩니다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-css">* {
+    margin: 0;
+}
+
+#wrap {}
+
+#header {
+    height: 100px;
+    background-color: #EEEBE9;
+}
+
+#nav {
+    height: 100px;
+    background-color: #B9AAA5;
+}
+
+#main {
+    height: 780px;
+    background-color: #886F65;
+}
+
+#footer {
+    height: 100px;
+    background-color: #4E342E;
+}
+
+.container {
+    width: 1200px;
+    height: inherit;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.contents {
+    display: grid;
+    grid-template-areas:
+        "cont1 cont1"
+        "cont2 cont2"
+        "cont3 cont4"
+    ;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100px 200px 480px;
+}
+
+.contents .cont1 {
+    background-color: #74574A;
+    grid-area: cont1;
+}
+
+.contents .cont2 {
+    background-color: #684D43;
+    grid-area: cont2;
+}
+
+.contents .cont3 {
+    background-color: #594139;
+    grid-area: cont3;
+}
+
+.contents .cont4 {
+    background-color: #4A352F;
+    grid-area: cont4;
+}
+
+@media(max-width:1220px) {
+    .container {
+        width: 96%;
+    }
+
+    .contents {
+        grid-template-areas:
+            "cont1 cont2 cont2"
+            "cont1 cont3 cont4"
+        ;
+        grid-template-columns: repeat(3,1fr);
+        /* fr반응형 3등분 했습니다. */
+        /* repeat(3, 33.3333%) */
+        /* 다 같은 얘기입니다. */
+        grid-template-rows: repeat(2, 390px);
+    }
+
+}
+
+@media(max-width:768px) {
+    .container {
+        width: 100%;
+    }
+    .contents {
+        grid-template-areas:
+            "cont1 cont2"
+            "cont1 cont3"
+            "cont1 cont4"
+        ;
+        grid-template-columns: 30% 70%;
+        grid-template-rows: repeat(3,1fr);
+    }
+}
+
+@media(max-width:480px) {
+    #header .container{
+        width: 100%;
+    }
+    #nav .container{
+        width: 100%;
+    }
+    #footer .container{
+        width: 100%;
+    }
+    .contents {
+        grid-template-areas:
+            "cont1"
+            "cont2"
+            "cont3"
+            "cont4"
+        ;
+        grid-template-columns: 100%;
+        grid-template-rows: 150px 210px 210px 210px;
+    }
+}
+</code></pre>
+                </div>
+
+                <h4 class="t_tit3">결과</h4>
+                <p class="codepen" data-zoom=0.5 data-height="800" data-default-tab="result" data-slug-hash="bGvYaZV" data-user="kim-0617" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                    <span>See the Pen <a href="https://codepen.io/kim-0617/pen/bGvYaZV">
+                    Untitled</a> by kim-0617 (<a href="https://codepen.io/kim-0617">@kim-0617</a>)
+                    on <a href="https://codepen.io">CodePen</a>.</span>
+                </p>
+                <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
             </div>
         </div>
     </main>
